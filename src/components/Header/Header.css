@@ -58,3 +58,24 @@
     align-items: center;
     margin-right: 70px;
 }  
+
+.header__register-button {
+    margin-right: 30px;
+}
+
+.header__login-button {
+    margin-right: 70px;
+    background-image: url(../../images/login-button.svg);
+    width: 76px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__login-text {
+    color: #000000;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
