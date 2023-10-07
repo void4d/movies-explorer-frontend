@@ -1,12 +1,12 @@
 import './App.css';
 import Header from '../Header/Header.js';
-import Promo from '../Promo/Promo.js';
+import Main from '../Main/Main';
 
 function App() {
   return (
     <div className='app'>
       <Header />
-      <Promo />
+      <Main />
     </div>
   );
 }
