@@ -1,93 +1,93 @@
 .header {
-    background-color: #073042;
-    width: 100%;
-    height: 74px;
+  background-color: #073042;
+  width: 100%;
+  height: 74px;
 }
 
 .header__block {
-    width: 1280px;
-    height: 74px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 1280px;
+  height: 74px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo {
-    width: 38px;
-    height: 38px;
-    margin-left: 70px;
-    cursor: pointer;
+  width: 38px;
+  height: 38px;
+  margin-left: 70px;
+  cursor: pointer;
 }
 
 .header__account-block {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header__movies {
-    margin-right: 20px;
-    cursor: pointer;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .header__saved-movies {
-    margin-right: 50px;
-    cursor: pointer;
+  margin-right: 50px;
+  cursor: pointer;
 }
 
 .header__account-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .header__account {
-    margin-right: 13px;
+  margin-right: 13px;
 }
 
 .header__account-icon {
-    width: 10px;
-    height: 10px;
-    background-image: url('../../images/icon-account.svg'); 
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
+  width: 10px;
+  height: 10px;
+  background-image: url('../../images/icon-account.svg');
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
 }
 
 .header__account-icon-container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 30%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 70px;
-}  
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+}
 
 .header__register-button {
-    margin-right: 30px;
-    cursor: pointer;
+  margin-right: 30px;
+  cursor: pointer;
 }
 
 .header__login-button {
-    margin-right: 70px;
-    background-image: url(../../images/login-button.svg);
-    width: 76px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  margin-right: 70px;
+  background-image: url(../../images/login-button.svg);
+  width: 76px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .header__login-text {
-    color: #000000;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
+  color: #000000;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
 }
