@@ -1,0 +1,104 @@
+.about-project {
+  width: 100%;
+  height: 608px;
+  background-color: #202020;
+}
+
+.about-project__block {
+  width: 1280px;
+  height: 498px;
+  margin: 0 auto;
+}
+
+.about-project__header {
+  margin: 0;
+  padding-top: 110px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-bottom: 70px;
+  font-size: 22px;
+  border-bottom: 1px solid #DADADA;
+  padding-bottom: 23px;
+  font-weight: 400;
+}
+
+.about-project__details {
+    margin-left: 70px;
+    display: flex;
+}
+
+.about-project__details-section {
+    width: 550px;
+    margin-bottom: 110px;
+}
+
+.about-project__details-section:last-of-type {
+    margin-left: 40px;
+}
+
+.about-project__subtitle {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about-project__text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.about-project__progress-bar {
+    margin-left: 70px;
+    display: flex;
+}
+
+.about-project__progress-done {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 228px;
+    height: 36px;
+    text-align: center;
+    background-color: #3DDC84;
+    color: #000000;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.about-project__progress-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 912px;
+    height: 36px;
+    background-color: #303030;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.about-project__progress-bar-labels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project__progress-label-done {
+    width: 228px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    font-weight: 500;
+}
+
+.about-project__progress-label-left {
+    width: 912px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    font-weight: 500;
+}
