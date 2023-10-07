@@ -7,9 +7,11 @@ function Header() {
     <div className="header__account-block">
       <div className="header__movies">Фильмы</div>
       <div className="header__saved-movies">Сохранённые фильмы</div>
-      <div className="header__account">Аккаунт</div>
-      <div className="header__account-icon-container">
-        <div className="header__account-icon" alt="Аккаунт"></div>
+      <div className="header__account-button">
+        <div className="header__account">Аккаунт</div>
+        <div className="header__account-icon-container">
+          <div className="header__account-icon" alt="Аккаунт"></div>
+        </div>
       </div>
     </div>
   );
