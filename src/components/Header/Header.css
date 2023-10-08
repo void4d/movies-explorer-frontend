@@ -72,6 +72,8 @@
 .header__register-button {
   margin-right: 30px;
   cursor: pointer;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .header__login-button {
