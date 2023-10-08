@@ -18,8 +18,9 @@
   margin-bottom: 70px;
   font-size: 22px;
   border-bottom: 1px solid #DADADA;
-  padding-bottom: 23px;
+  padding-bottom: 24px;
   font-weight: 400;
+  letter-spacing: -0.04em;
 }
 
 .about-project__details {
@@ -41,6 +42,7 @@
     font-weight: 400;
     margin: 0;
     margin-bottom: 26px;
+    letter-spacing: -0.04em;
 }
 
 .about-project__text {

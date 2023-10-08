@@ -21,6 +21,7 @@
   border-bottom: 1px solid #dadada;
   padding-bottom: 23px;
   font-weight: 400;
+  letter-spacing: -0.04em;
 }
 
 .tech-project__details {
@@ -43,6 +44,8 @@
   text-align: center;
   margin: 0;
   margin-bottom: 26px;
+  letter-spacing: -0.04em;
+  max-width: 600px;
 }
 
 .tech-project__text {
@@ -52,6 +55,8 @@
   text-align: center;
   margin: 0;
   margin-bottom: 100px;
+  letter-spacing: -0.04em;
+  max-width: 460px;
 }
 
 .tech-project__techs {
@@ -69,6 +74,7 @@
     align-items: center;
     font-size: 14px;
     margin-left: 10px;
+    letter-spacing: -0.04em;
 }
 
 .tech-project__tech:first-of-type {
