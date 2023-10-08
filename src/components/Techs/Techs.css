@@ -2,7 +2,6 @@
   width: 100%;
   height: 625px;
   background-color: #272727;
-  padding-bottom: 100px;
 }
 
 .tech-project__block {
@@ -60,21 +59,21 @@
 }
 
 .tech-project__techs {
-    display: flex;
-    width: 690px;
+  display: flex;
+  width: 690px;
 }
 
 .tech-project__tech {
-    background-color: #303030;
-    border-radius: 10px;
-    width: 90px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    margin-left: 10px;
-    letter-spacing: -0.04em;
+  background-color: #303030;
+  border-radius: 10px;
+  width: 90px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 10px;
+  letter-spacing: -0.04em;
 }
 
 .tech-project__tech:first-of-type {
