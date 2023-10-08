@@ -1,7 +1,7 @@
 import logo from '../../images/logo.svg';
 
 function Header() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   const loggedInBlock = (
     <div className="header__account-block">
