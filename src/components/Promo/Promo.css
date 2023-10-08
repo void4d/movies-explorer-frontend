@@ -10,7 +10,6 @@
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -37,6 +36,7 @@
   width: 310px;
   height: 304px;
   margin-right: 70px;
+  margin-top: 70px;
 }
 
 .promo__more-button {
