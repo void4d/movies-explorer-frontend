@@ -39,11 +39,14 @@
 .about-project__subtitle {
     font-size: 20px;
     font-weight: 400;
+    margin: 0;
+    margin-bottom: 26px;
 }
 
 .about-project__text {
     font-size: 14px;
     line-height: 20px;
+    margin: 0;
 }
 
 .about-project__progress-bar {
