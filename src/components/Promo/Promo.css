@@ -16,12 +16,12 @@
 .promo__title {
   font-size: 50px;
   line-height: 58px;
-  font-weight: 400;
   width: 640px;
   margin: 0;
   margin-top: 75px;
   margin-left: 70px;
   margin-bottom: 36px;
+  font-weight: 400;
 }
 
 .promo__more {
@@ -30,6 +30,7 @@
   margin-left: 70px;
   width: 310px;
   opacity: 0.5;
+  font-weight: 400;
 }
 
 .promo__landing-logo {
@@ -54,4 +55,6 @@
 
 .promo__more-button-text {
   font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
 }

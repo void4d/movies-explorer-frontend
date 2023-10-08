@@ -19,8 +19,8 @@
   font-size: 22px;
   border-bottom: 1px solid #DADADA;
   padding-bottom: 24px;
-  font-weight: 400;
   letter-spacing: -0.04em;
+  font-weight: 400;
 }
 
 .about-project__details {
@@ -39,16 +39,17 @@
 
 .about-project__subtitle {
     font-size: 20px;
-    font-weight: 400;
     margin: 0;
     margin-bottom: 26px;
     letter-spacing: -0.04em;
+    font-weight: 400;
 }
 
 .about-project__text {
     font-size: 14px;
     line-height: 20px;
     margin: 0;
+    font-weight: 400;
 }
 
 .about-project__progress-bar {
@@ -67,6 +68,7 @@
     color: #000000;
     margin-bottom: 14px;
     font-size: 14px;
+    font-weight: 400;
 }
 
 .about-project__progress-left {
