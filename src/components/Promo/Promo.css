@@ -1,12 +1,11 @@
 .promo {
-  background-color: #073042;
   width: 100%;
   height: 524px;
   padding-bottom: 50px;
 }
 
-.promo__block {
-  width: 1280px;
+.promo__container {
+  max-width: 1280px;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;

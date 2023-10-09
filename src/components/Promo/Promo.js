@@ -3,7 +3,7 @@ import landingLogo from '../../images/landing-logo.svg'
 function Promo() {
   return (
     <main className="promo">
-      <div className="promo__block">
+      <div className="promo__container">
         <div className="promo__text">
           <h1 className="promo__title">Учебный проект студента факультета Веб&#x2011;разработки.</h1>
           <p className="promo__more">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>

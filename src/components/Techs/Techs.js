@@ -1,7 +1,7 @@
 function Tech() {
   return (
     <div className="tech-project">
-      <div className="tech-project__block">
+      <div className="tech-project__container">
         <h2 className="tech-project__header">Технологии</h2>
         <div className="tech-project__details">
           <div className="tech-project__details-section">
