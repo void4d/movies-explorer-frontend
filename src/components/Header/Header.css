@@ -38,12 +38,20 @@
   font-weight: 400;
 }
 
+.header__movies_clicked {
+  font-weight: 500;
+}
+
 .header__saved-movies {
   margin-right: 50px;
   cursor: pointer;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+}
+
+.header__saved-movies_clicked {
+  font-weight: 500;
 }
 
 .header__account-button {

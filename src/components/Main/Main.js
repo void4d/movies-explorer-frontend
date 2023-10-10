@@ -3,6 +3,7 @@ import AboutProject from '../AboutProject/AboutProject.js';
 import Tech from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function Main() {
   return (
@@ -11,7 +12,8 @@ function Main() {
       <AboutProject />
       <Tech />
       <AboutMe /> */}
-      <Movies />
+      {/* <Movies /> */}
+      <SavedMovies />
     </main>
   );
 }
