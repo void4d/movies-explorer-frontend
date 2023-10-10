@@ -33,11 +33,17 @@
 .header__movies {
   margin-right: 20px;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 .header__saved-movies {
   margin-right: 50px;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 .header__account-button {
@@ -50,11 +56,14 @@
 
 .header__account {
   margin-right: 13px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
 }
 
 .header__account-icon {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-image: url('../../images/icon-account.svg');
   background-size: contain;
   display: flex;
@@ -64,8 +73,8 @@
 }
 
 .header__account-icon-container {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 30%;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
   width: 30px;
   height: 30px;
   display: flex;

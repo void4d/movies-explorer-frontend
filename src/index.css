@@ -12,3 +12,6 @@ body {
 @import url(./components/Portfolio/Portfolio.css);
 @import url(./components/Footer/Footer.css);
 @import url(./components/SearchForm/SearchForm.css);
+@import url(./components/Preloader/Preloader.css);
+@import url(./components/MoviesCardList/MoviesCardList.css);
+@import url(./components/MoviesCard/MoviesCard.css);
