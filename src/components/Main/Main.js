@@ -4,6 +4,7 @@ import Tech from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Profile/Profile';
 
 function Main() {
   return (
@@ -13,7 +14,8 @@ function Main() {
       <Tech />
       <AboutMe /> */}
       {/* <Movies /> */}
-      <SavedMovies />
+      {/* <SavedMovies /> */}
+      <Profile />
     </main>
   );
 }

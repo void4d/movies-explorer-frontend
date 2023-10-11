@@ -66,6 +66,9 @@
   margin-right: 13px;
   font-size: 14px;
   line-height: 16px;
+}
+
+.header__account_clicked {
   font-weight: 500;
 }
 
