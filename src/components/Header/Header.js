@@ -1,10 +1,11 @@
 import logo from '../../images/logo.svg';
 
 function Header() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   const moviesComponent = false;
   const savedMoviesComponent = false;
-  const profileComponent = true;
+  const profileComponent = false;
+  const authComponent = true;
 
   const loggedInContainer = (
     <div className="header__account-container">
@@ -29,6 +30,7 @@ function Header() {
   );
 
   return (
+    authComponent ? '' :
     <header className={`header ${moviesComponent || savedMoviesComponent || profileComponent ? 'header_dark' : ''}`}>
       <div className="header__container">
         <img className="header__logo" src={logo} alt="Логотип"></img>

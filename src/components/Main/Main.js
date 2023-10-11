@@ -5,6 +5,7 @@ import AboutMe from '../AboutMe/AboutMe';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
 
 function Main() {
   return (
@@ -15,7 +16,8 @@ function Main() {
       <AboutMe /> */}
       {/* <Movies /> */}
       {/* <SavedMovies /> */}
-      <Profile />
+      {/* <Profile /> */}
+      {/* <Register /> */}
     </main>
   );
 }
