@@ -2,6 +2,11 @@ body {
   background-color: #202020;
 }
 
+.link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
 @import url(./components/Header/Header.css);

@@ -4,56 +4,52 @@ import { useLocation, Link } from 'react-router-dom';
 function Header({ isLoggedIn }) {
   const location = useLocation();
 
-  const moviesComponent = location.pathname === '/movies';
-  const savedMoviesComponent = location.pathname === '/saved-movies';
-  const profileComponent = location.pathname === '/profile';
-  const notAuthComponent =
+  const isMoviesPage = location.pathname === '/movies';
+  const isSavedMoviesPage = location.pathname === '/saved-movies';
+  const isProfilePage = location.pathname === '/profile';
+  const isExistingPage =
     location.pathname === '/' ||
     location.pathname === '/movies' ||
-    location.pathname === '/saved-movies' ||
-    location.pathname === '/';
+    location.pathname === '/saved-movies';
 
   const loggedInContainer = (
     <div className="header__account-container">
-      <Link to="/movies">
-        <div className={`header__movies ${moviesComponent ? 'header__movies_clicked' : ''}`}>Фильмы</div>
+      <Link to="/movies" className="link">
+        <div className={`header__movies ${isMoviesPage ? 'header__movies_clicked' : ''}`}>Фильмы</div>
       </Link>
-      <Link to="/saved-movies">
-        <div className={`header__saved-movies ${savedMoviesComponent ? 'header__saved-movies_clicked' : ''}`}>
+      <Link to="/saved-movies" className="link">
+        <div className={`header__saved-movies ${isSavedMoviesPage ? 'header__saved-movies_clicked' : ''}`}>
           Сохранённые фильмы
         </div>
       </Link>
-
-      <div className="header__account-button">
-        <Link to="/profile">
-          <div className={`header__account ${profileComponent ? 'header__account_clicked' : ''}`}>Аккаунт</div>
-        </Link>
-
-        <div className="header__account-icon-container">
-          <div className="header__account-icon" alt="Аккаунт"></div>
+      <Link to="/profile" className="link">
+        <div className="header__account-button">
+          <div className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</div>
+          <div className="header__account-icon-container">
+            <div className="header__account-icon" alt="Аккаунт"></div>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 
   const loggedOutContainer = (
     <div className="header__account-container">
-      <Link to="/signup">
+      <Link to="/signup" className="link">
         <div className="header__register-button">Регистрация</div>
       </Link>
-
-      <div className="header__login-button">
-        <Link to="/signin">
+      <Link to="/signin" className="link">
+        <div className="header__login-button">
           <div className="header__login-text">Войти</div>
-        </Link>
-      </div>
+        </div>{' '}
+      </Link>
     </div>
   );
 
-  return !notAuthComponent ? (
+  return !isExistingPage ? (
     ''
   ) : (
-    <header className={`header ${moviesComponent || savedMoviesComponent || profileComponent ? 'header_dark' : ''}`}>
+    <header className={`header ${isMoviesPage || isSavedMoviesPage || isProfilePage ? 'header_dark' : ''}`}>
       <div className="header__container">
         <Link to="/">
           <img className="header__logo" src={logo} alt="Логотип"></img>
