@@ -109,3 +109,63 @@
   color: #8b8b8b;
   font-weight: 500;
 }
+
+@media screen and (max-width: 1279px) {
+  .about-project {
+    height: 585px;
+  }
+
+  .about-project__container {
+    width: 768px;
+    height: 585px;
+  }
+
+  .about-project__header {
+    padding-top: 90px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .about-project__details {
+    padding-left: 50px;
+    display: flex;
+  }
+
+  .about-project__details-section {
+    width: 319px;
+    margin-bottom: 93px;
+  }
+
+  .about-project__details-section:last-of-type {
+    padding-left: 30px;
+  }
+
+  .about-project__subtitle {
+    margin-bottom: 22px;
+  }
+
+  .about-project__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-project__progress-bar {
+    padding-left: 50px;
+  }
+
+  .about-project__progress-done {
+    width: 140px;
+  }
+
+  .about-project__progress-left {
+    width: 528px;
+  }
+
+  .about-project__progress-label-done {
+    width: 140px;
+  }
+
+  .about-project__progress-label-left {
+    width: 528px;
+  }
+}

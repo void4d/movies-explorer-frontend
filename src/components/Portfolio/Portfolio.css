@@ -1,5 +1,6 @@
 .portfolio {
   padding-left: 70px;
+  margin: 0;
 }
 
 .portfolio__header {
@@ -41,6 +42,25 @@
 .portfolio__arrow {
   width: 18px;
   height: 18px;
-  margin-right: 6px;
-  margin-bottom: 13px;
+  padding-right: 6px;
+  padding-bottom: 13px;
+}
+
+@media screen and (max-width: 1279px) {
+  .portfolio {
+    padding-left: 50px;
+  }
+
+  .portfolio__header {
+    max-width: 250px;
+  }
+
+  .portfolio__link-container {
+    width: 668px;
+  }
+
+  .portfolio__link {
+    font-size: 28px;
+    width: 440px;
+  }
 }
