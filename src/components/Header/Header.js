@@ -10,7 +10,8 @@ function Header({ isLoggedIn }) {
   const isExistingPage =
     location.pathname === '/' ||
     location.pathname === '/movies' ||
-    location.pathname === '/saved-movies';
+    location.pathname === '/saved-movies' ||
+    location.pathname === '/profile';
 
   const loggedInContainer = (
     <div className="header__account-container">

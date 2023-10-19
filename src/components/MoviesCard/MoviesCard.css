@@ -1,0 +1,105 @@
+.movies-card {
+  width: 360px;
+  height: 319px;
+  background-color: #222222;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-card__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.movies-card__details-name {
+  margin: 0;
+  margin-left: 18px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.movies-card__details-duration {
+  margin: 0;
+  margin-right: 18px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+
+.movies-card__thumbnail {
+  margin-top: 18px;
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.movies-card__save-button {
+  margin-top: 18px;
+  width: 100px;
+  height: 29px;
+  background-color: #313131;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.movies-card__save-button-text {
+  font-size: 12px;
+  line-height: 11px;
+  font-weight: 400;
+}
+
+.movies-card__saved-button {
+  margin-top: 18px;
+  margin-top: 18px;
+  width: 100px;
+  height: 29px;
+  background-color: #ee3465;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.movies-card__check-mark-icon {
+  background-image: url(../../images/icon-check-mark.svg);
+  width: 12px;
+  height: 6.75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.movies-card__delete-button {
+  margin-top: 18px;
+  margin-top: 18px;
+  width: 100px;
+  height: 29px;
+  background-color: #313131;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.movies-card__cross-icon {
+  background-image: url(../../images/icon-cross.svg);
+  width: 12px;
+  height: 6.75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

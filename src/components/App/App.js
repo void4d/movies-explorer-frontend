@@ -11,7 +11,7 @@ import Profile from '../Profile/Profile';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <div className="app">
