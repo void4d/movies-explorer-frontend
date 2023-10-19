@@ -9,15 +9,15 @@ function Tech() {
             <p className="tech-project__text">
               На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.
             </p>
-            <div className="tech-project__techs">
-              <div className="tech-project__tech">HTML</div>
-              <div className="tech-project__tech">CSS</div>
-              <div className="tech-project__tech">JS</div>
-              <div className="tech-project__tech">React</div>
-              <div className="tech-project__tech">Git</div>
-              <div className="tech-project__tech">Express.js</div>
-              <div className="tech-project__tech">mongoDB</div>
-            </div>
+            <ul className="tech-project__techs">
+              <li className="tech-project__tech">HTML</li>
+              <li className="tech-project__tech">CSS</li>
+              <li className="tech-project__tech">JS</li>
+              <li className="tech-project__tech">React</li>
+              <li className="tech-project__tech">Git</li>
+              <li className="tech-project__tech">Express.js</li>
+              <li className="tech-project__tech">mongoDB</li>
+            </ul>
           </div>
         </div>
       </div>

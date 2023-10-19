@@ -5,11 +5,11 @@ function MoviesCardList() {
   const nothingFound = false;
 
   const movieCards = (
-    <div className="movies-card-list__container">
+    <ul className="movies-card-list__container">
       <MoviesCard />
       <MoviesCard />
       <MoviesCard />
-    </div>
+    </ul>
   );
 
   const noResults = <div className="no-results">Поиск не дал результатов</div>;

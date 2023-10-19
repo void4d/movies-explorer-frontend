@@ -6,6 +6,8 @@
 }
 
 .movies-card-list__container {
+  padding-left: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 360px);
   grid-auto-rows: 319px;
@@ -13,6 +15,7 @@
   column-gap: 28px;
   row-gap: 32px;
   margin-bottom: 10px;
+  list-style: none;
 }
 
 .movies-card-list__more {

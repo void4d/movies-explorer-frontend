@@ -12,6 +12,7 @@
 }
 
 .portfolio__link-container {
+  list-style: none;
   width: 1140px;
   display: flex;
   justify-content: space-between;

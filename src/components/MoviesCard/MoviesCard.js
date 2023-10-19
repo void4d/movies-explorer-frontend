@@ -26,14 +26,14 @@ function MoviesCard() {
   );
 
   return (
-    <div className="movies-card">
+    <li className="movies-card">
       <div className="movies-card__details">
         <p className="movies-card__details-name">В погоне за Бенкси</p>
         <p className="movies-card__details-duration">0ч 42м</p>
       </div>
       <img className="movies-card__thumbnail" src={Thumbnail} alt=""></img>
       {savedMoviesPage ? deleteButton : isSaved ? savedButton : saveButton}
-    </div>
+    </li>
   );
 }
 

@@ -2,21 +2,43 @@ import ArrowIcon from '../../images/icon-arrow.svg';
 
 function Portfolio() {
   return (
-    <div className="portfolio">
+    <ul className="portfolio">
       <h4 className="portfolio__header">Портфолио</h4>
-      <div className="portfolio__link-container">
-        <a className="portfolio__link">Статичный сайт</a>
-        <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
-      </div>
-      <div className="portfolio__link-container">
-        <a className="portfolio__link">Адаптивный сайт</a>
-        <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
-      </div>
-      <div className="portfolio__link-container">
-        <a className="portfolio__link">Одностраничное приложение</a>
-        <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
-      </div>
-    </div>
+      <li className="portfolio__link-container">
+        <a
+          className="portfolio__link"
+          href="https://void4d.github.io/how-to-learn/index.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Статичный сайт
+        </a>
+        <a href="https://void4d.github.io/how-to-learn/index.html" rel="noreferrer" target="_blank">
+          <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
+        </a>
+      </li>
+      <li className="portfolio__link-container">
+        <a
+          className="portfolio__link"
+          href="https://void4d.github.io/russian-travel/index.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Адаптивный сайт
+        </a>
+        <a href="https://void4d.github.io/russian-travel/index.html" rel="noreferrer" target="_blank">
+          <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
+        </a>
+      </li>
+      <li className="portfolio__link-container">
+        <a className="portfolio__link" href="https://github.com/void4d/mesto-react" rel="noreferrer" target="_blank">
+          Одностраничное приложение
+        </a>
+        <a href="https://github.com/void4d/mesto-react" rel="noreferrer" target="_blank">
+          <img className="portfolio__arrow" src={ArrowIcon} alt="Стрелка" />
+        </a>
+      </li>
+    </ul>
   );
 }
 

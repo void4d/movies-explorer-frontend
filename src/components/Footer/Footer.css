@@ -41,8 +41,10 @@
 }
 
 .footer__links {
+  margin: 0;
   font-size: 13px;
   display: flex;
+  list-style: none;
 }
 
 .footer__link {
@@ -52,8 +54,4 @@
   font-size: 13px;
   padding-left: 20px;
   font-weight: 400;
-}
-
-.footer__link:first-of-type {
-  padding-left: 0;
 }
