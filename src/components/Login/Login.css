@@ -104,3 +104,18 @@
   color: #4285f4;
   text-decoration: none;
 }
+
+@media screen and (max-width: 1279px) {
+  .login {
+    height: 1024px;
+  }
+
+  .login__top {
+    width: 396px;
+    padding-top: 232px;
+  }
+
+  .login__bottom {
+    height: 379px;
+  }
+}

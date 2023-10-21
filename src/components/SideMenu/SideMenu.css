@@ -1,0 +1,118 @@
+.side-menu-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.side-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: fixed;
+  width: 67%;
+  height: 100vh;
+  background-color: #202020;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-menu__close-button {
+  background-image: url('../../images/icon-cross.svg');
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 1;
+}
+
+.side-menu__main {
+  padding-top: 159px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.side-menu__main_clicked {
+  font-weight: 500;
+}
+
+.side-menu__movies {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 28px;
+  text-align: center;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+.side-menu__movies_clicked {
+  font-weight: 500;
+}
+
+.side-menu__saved-movies {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 620px;
+  text-align: center;
+}
+
+.side-menu__saved-movies_clicked {
+  font-weight: 500;
+}
+
+.side-menu__account-container {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.side-menu__account-button {
+  display: flex;
+  align-items: center;
+}
+
+.side-menu__account {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  padding-right: 13px;
+}
+
+.side-menu__account_clicked {
+  font-weight: 500;
+}
+
+.side-menu__account-icon-container {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu__account-icon {
+  width: 12px;
+  height: 12px;
+  background-image: url('../../images/icon-account.svg');
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}

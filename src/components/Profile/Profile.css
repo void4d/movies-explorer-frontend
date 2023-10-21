@@ -65,3 +65,26 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1279px) {
+  .profile {
+    height: 950px;
+  }
+
+  .profile__container {
+    padding-top: 74px;
+  }
+
+  .profile__container {
+    padding-top: 236px;
+  }
+
+  .profile__greeting {
+    margin-bottom: 96px;
+  }
+
+  .profile__data {
+    width: 410px;
+    margin-bottom: 210px;
+  }
+}

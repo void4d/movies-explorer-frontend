@@ -1,7 +1,7 @@
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 
 function MoviesCardList() {
-  const moreThanThree = false;
+  const manyCards = false;
   const nothingFound = false;
 
   const movieCards = (
@@ -20,7 +20,7 @@ function MoviesCardList() {
       <div className="movies-card-list__more">
         <div
           className={`movies-card-list__more-button ${
-            !nothingFound && moreThanThree ? '' : 'movies-card-list__more-button_hidden'
+            !nothingFound && manyCards ? '' : 'movies-card-list__more-button_hidden'
           }`}
         >
           Ещё

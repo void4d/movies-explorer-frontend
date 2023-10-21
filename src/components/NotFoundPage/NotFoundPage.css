@@ -27,3 +27,9 @@
   color: #4285f4;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1279px) {
+  .not-found-page {
+    height: 1024px;
+  }
+}

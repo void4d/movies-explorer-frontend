@@ -50,3 +50,17 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 1279px) {
+  .movies-card-list__container {
+    grid-template-columns: repeat(2, 342px);
+    grid-auto-rows: 309px;
+    column-gap: 24px;
+    row-gap: 35px;
+    margin-bottom: 30px;
+  }
+
+  .movies-card-list__more-button {
+    width: 708px;
+  }
+}

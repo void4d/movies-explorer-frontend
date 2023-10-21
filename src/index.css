@@ -24,3 +24,4 @@ body {
 @import url(./components/Register/Register.css);
 @import url(./components/Login/Login.css);
 @import url(./components/NotFoundPage/NotFoundPage.css);
+@import url(./components/SideMenu/SideMenu.css);

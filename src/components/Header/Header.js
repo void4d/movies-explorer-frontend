@@ -13,6 +13,14 @@ function Header({ isLoggedIn }) {
     location.pathname === '/saved-movies' ||
     location.pathname === '/profile';
 
+  const menuButton = (
+    <div className="menu-button">
+      <div className="menu-button__line"></div>
+      <div className="menu-button__line"></div>
+      <div className="menu-button__line"></div>
+    </div>
+  );
+
   const loggedInContainer = (
     <ul className="header__account-container">
       <li>
@@ -38,6 +46,7 @@ function Header({ isLoggedIn }) {
           </div>
         </Link>
       </li>
+      {menuButton}
     </ul>
   );
 
@@ -64,7 +73,7 @@ function Header({ isLoggedIn }) {
   ) : (
     <header className={`header ${isMoviesPage || isSavedMoviesPage || isProfilePage ? 'header_dark' : ''}`}>
       <nav className="header__container">
-        <Link to="/">
+        <Link to="/" className="link">
           <img className="header__logo" src={logo} alt="Логотип"></img>
         </Link>
 
