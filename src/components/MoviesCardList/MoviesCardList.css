@@ -14,6 +14,7 @@
   grid-auto-flow: row;
   column-gap: 28px;
   row-gap: 32px;
+  margin-top: 70px;
   margin-bottom: 10px;
   list-style: none;
 }
@@ -62,5 +63,24 @@
 
   .movies-card-list__more-button {
     width: 708px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies-card-list__container {
+    grid-template-columns: 300px;
+    grid-auto-rows: 271px;
+    grid-auto-flow: row;
+    row-gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .movies-card-list__more-button {
+    width: 300px;
+  }
+
+  .no-results {
+    font-size: 14px;
   }
 }

@@ -1,6 +1,5 @@
 .search-form {
   background-color: #202020;
-  height: 242px;
   padding-top: 70px;
 }
 
@@ -88,8 +87,6 @@
 
 @media screen and (max-width: 1279px) {
   .search-form {
-    height: 250px;
-    padding-top: 70px;
   }
 
   .search-form__container {
@@ -114,5 +111,49 @@
     margin-left: 30px;
     margin-top: 51px;
     max-width: 708px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search-form__container {
+    max-width: 320px;
+  }
+
+  .search-form__field {
+    width: 292px;
+    height: 56px;
+    margin-left: 14px;
+    margin-bottom: 30px;
+  }
+
+  .search-form__input {
+    margin-left: 12px;
+    font-size: 16px;
+    line-height: 16px;
+    width: 150px;
+  }
+
+  .search-form__search-button {
+    margin-right: 6px;
+    width: 80px;
+    height: 44px;
+  }
+
+  .search-form__short-container {
+    margin-left: 14px;
+  }
+
+  .search-form__short-tumbler {
+    margin-right: 13px;
+  }
+
+  .search-form__short-text {
+    font-size: 11px;
+  }
+
+  .search-form__divider {
+    margin-left: 14px;
+    margin-top: 63px;
+    max-width: 292px;
   }
 }
