@@ -128,7 +128,6 @@
 
   .about-project__details {
     padding-left: 50px;
-    display: flex;
   }
 
   .about-project__details-section {
@@ -167,5 +166,80 @@
 
   .about-project__progress-label-left {
     width: 528px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-project {
+    height: 641px;
+  }
+
+  .about-project__container {
+    width: 320px;
+    height: 641px;
+  }
+
+  .about-project__header {
+    padding-top: 70px;
+    margin-left: 18px;
+    margin-right: 18px;
+    padding-bottom: 28px;
+    font-size: 18px;
+  }
+
+  .about-project__details {
+    padding-left: 18px;
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  .about-project__details-section {
+    width: 284px;
+    margin-bottom: 56px;
+  }
+
+  .about-project__details-section:last-of-type {
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+
+  .about-project__subtitle {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .about-project__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-project__progress-bar {
+    padding-left: 18px;
+    height: 35px;
+  }
+
+  .about-project__progress-done {
+    width: 100px;
+    height: 35px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .about-project__progress-left {
+    width: 184px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .about-project__progress-label-done {
+    width: 100px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .about-project__progress-label-left {
+    width: 184px;
+    height: 35px;
+    font-size: 11px;
   }
 }

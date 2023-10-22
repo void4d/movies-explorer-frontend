@@ -170,3 +170,47 @@
     margin-bottom: 0px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header__container {
+    width: 320px;
+  }
+
+  .header__logo {
+    padding-left: 14px;
+  }
+
+  .header__login-button {
+    margin-right: 14px;
+  }
+
+  .header__account-icon-container {
+    margin-right: 14px;
+  }
+
+  .menu-button {
+    padding-right: 23px;
+  }
+
+  .menu-button__line {
+    width: 22px;
+    height: 2.5px;
+    margin-bottom: 6.5px;
+    background-color: #ffffff;
+  }
+
+  .header__register-button {
+    padding-right: 14px;
+    font-size: 10px;
+  }
+
+  .header__login-button {
+    margin-right: 14px;
+    width: 54px;
+    height: 26px;
+  }
+
+  .header__login-text {
+    font-size: 10px;
+  }
+}

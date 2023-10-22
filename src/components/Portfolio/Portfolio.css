@@ -64,3 +64,32 @@
     width: 440px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .portfolio {
+    padding-left: 14px;
+  }
+
+  .portfolio__header {
+    max-width: 292px;
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+
+  .portfolio__link-container {
+    width: 292px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .portfolio__link {
+    font-size: 18px;
+    width: 250px;
+  }
+
+  .portfolio__arrow {
+    width: 14px;
+    height: 14px;
+    padding-right: 6px;
+    padding-bottom: 13px;
+  }
+}
