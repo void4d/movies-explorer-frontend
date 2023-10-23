@@ -13,17 +13,17 @@ function Register() {
       <div className="register__inputs">
         <div className="register__input-container">
           <p className="register__input-name">Имя</p>
-          <input className="register__input" minlength="2"></input>
+          <input className="register__input" minLength="2" placeholder="Введите имя"></input>
           <span className="register__error-message"></span>
         </div>
         <div className="register__input-container">
           <p className="register__input-name">E-mail</p>
-          <input className="register__input" type="email" minlength="2"></input>
+          <input className="register__input" type="email" minLength="2" placeholder="Введите E-mail"></input>
           <span className="register__error-message"></span>
         </div>
         <div className="register__input-container">
           <p className="register__input-name">Пароль</p>
-          <input className="register__input" type="password" minlength="6"></input>
+          <input className="register__input" type="password" minLength="6" placeholder="Введите пароль"></input>
           <span className="register__error-message"></span>
         </div>
       </div>

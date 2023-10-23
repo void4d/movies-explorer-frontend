@@ -41,7 +41,7 @@ function Header({ isLoggedIn, onClick }) {
           <div className="header__account-button">
             <div className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</div>
             <div className="header__account-icon-container">
-              <div className="header__account-icon" alt="Аккаунт"></div>
+              <div className="header__account-icon"></div>
             </div>
           </div>
         </Link>

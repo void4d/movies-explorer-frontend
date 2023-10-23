@@ -93,6 +93,11 @@
   transition: opacity 0.5s ease;
 }
 
+.profile__save-button_disabled {
+  color: #c2c2c2;
+  background-color: #f8f8f8;
+}
+
 .profile__save-button:hover {
   opacity: 0.8;
 }

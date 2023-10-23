@@ -35,7 +35,7 @@ function SideMenu({ isOpen, onClose }) {
               <div className="side-menu__account-button">
                 <div className={`side-menu__account ${isProfilePage ? 'side-menu__account_clicked' : ''}`}>Аккаунт</div>
                 <div className="side-menu__account-icon-container">
-                  <div className="side-menu__account-icon" alt="Аккаунт"></div>
+                  <div className="side-menu__account-icon"></div>
                 </div>
               </div>
             </div>

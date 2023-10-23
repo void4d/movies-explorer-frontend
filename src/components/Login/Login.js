@@ -13,12 +13,12 @@ function Login() {
       <div className="login__inputs">
         <div className="login__input-container">
           <p className="login__input-name">E-mail</p>
-          <input className="login__input" type="email" minlength="2"></input>
+          <input className="login__input" type="email" minLength="2" placeholder="Введите E-mail"></input>
           <span className="login__error-message"></span>
         </div>
         <div className="login__input-container">
           <p className="login__input-name">Пароль</p>
-          <input className="login__input" type="password" minlength="6"></input>
+          <input className="login__input" type="password" minLength="6" placeholder="Введите пароль"></input>
           <span className="login__error-message"></span>
         </div>
       </div>
