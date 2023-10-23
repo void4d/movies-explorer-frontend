@@ -1,19 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
 
-function SideMenu() {
+function SideMenu({ isOpen, onClose }) {
   const location = useLocation();
 
+  const isMainPage = location.pathname === '/';
   const isMoviesPage = location.pathname === '/movies';
   const isSavedMoviesPage = location.pathname === '/saved-movies';
   const isProfilePage = location.pathname === '/profile';
 
   return (
-    <div className="side-menu-overlay">
-      <div className="side-menu__close-button"></div>
-      <ul className="side-menu">
+    <div className={`side-menu-overlay ${isOpen ? 'open' : ''}`}>
+      <ul className={`side-menu ${isOpen ? 'open' : ''}`}>
+        <div className="side-menu__close-button" onClick={onClose}></div>
         <li>
           <Link to="/" className="link">
-            <div className={`side-menu__main ${isSavedMoviesPage ? 'side-menu__main_clicked' : ''}`}>Главная</div>
+            <div className={`side-menu__main ${isMainPage ? 'side-menu__main_clicked' : ''}`}>Главная</div>
           </Link>
         </li>
         <li>

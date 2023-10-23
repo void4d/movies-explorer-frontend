@@ -9,14 +9,26 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import { Routes, Route } from 'react-router-dom';
+import SideMenu from '../SideMenu/SideMenu';
+import { useState } from 'react';
 
 function App() {
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+  function openSideMenu(e) {
+    setIsSideMenuOpen(true);
+  }
+
+  function closeSideMenu() {
+    setIsSideMenuOpen(false);
+  }
+
   const isLoggedIn = true;
 
   return (
     <div className="app">
       <div>
-        <Header isLoggedIn={isLoggedIn} />
+        <Header isLoggedIn={isLoggedIn} onClick={openSideMenu} />
         <Routes>
           <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
           <Route path="/movies" element={<Movies />} />
@@ -26,6 +38,7 @@ function App() {
           <Route path="/signin" element={<Login />} />
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
+        <SideMenu isOpen={isSideMenuOpen} onClose={closeSideMenu} />
       </div>
       <div>
         <Footer />

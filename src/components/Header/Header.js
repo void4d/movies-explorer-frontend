@@ -1,7 +1,7 @@
 import logo from '../../images/logo.svg';
 import { useLocation, Link } from 'react-router-dom';
 
-function Header({ isLoggedIn }) {
+function Header({ isLoggedIn, onClick }) {
   const location = useLocation();
 
   const isMoviesPage = location.pathname === '/movies';
@@ -14,7 +14,7 @@ function Header({ isLoggedIn }) {
     location.pathname === '/profile';
 
   const menuButton = (
-    <div className="menu-button">
+    <div className="menu-button" onClick={onClick}>
       <div className="menu-button__line"></div>
       <div className="menu-button__line"></div>
       <div className="menu-button__line"></div>
