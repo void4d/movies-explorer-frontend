@@ -25,6 +25,11 @@
   height: 38px;
   padding-left: 70px;
   cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.header__logo:hover {
+  opacity: 0.8;
 }
 
 .header__account-container {
@@ -42,6 +47,11 @@
   line-height: 18px;
   font-weight: 400;
   text-decoration: none;
+  transition: opacity 0.5s;
+}
+
+.header__movies:hover {
+  opacity: 0.7;
 }
 
 .header__movies_clicked {
@@ -54,6 +64,11 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
+  transition: opacity 0.5s;
+}
+
+.header__saved-movies:hover {
+  opacity: 0.7;
 }
 
 .header__saved-movies_clicked {
@@ -72,6 +87,11 @@
   padding-right: 13px;
   font-size: 14px;
   line-height: 16px;
+  transition: opacity 0.5s;
+}
+
+.header__account:hover {
+  opacity: 0.7;
 }
 
 .header__account_clicked {
@@ -106,6 +126,11 @@
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
+  transition: opacity 0.5s;
+}
+
+.header__register-button:hover {
+  opacity: 0.7;
 }
 
 .header__login-button {
@@ -118,6 +143,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.header__login-button:hover {
+  opacity: 0.8;
 }
 
 .header__login-text {

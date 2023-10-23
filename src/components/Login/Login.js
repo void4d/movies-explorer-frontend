@@ -5,7 +5,9 @@ function Login() {
   return (
     <form className="login">
       <div className="login__top">
-        <img className="login__logo" src={Logo} alt="Логотип"></img>
+        <Link to="/" className="link">
+          <img className="login__logo" src={Logo} alt="Логотип"></img>
+        </Link>
         <h1 className="login__welcome">Рады видеть!</h1>
       </div>
       <div className="login__inputs">

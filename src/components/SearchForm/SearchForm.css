@@ -50,6 +50,11 @@
   line-height: 18px;
   font-weight: 500;
   cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.search-form__search-button:hover {
+  opacity: 0.8;
 }
 
 .search-form__short-container {
@@ -64,6 +69,7 @@
   background-image: url(../../images/smalltumbon.svg);
   margin-right: 14px;
   cursor: pointer;
+  transition: background-image 0.3s ease;
 }
 
 .search-form__short-tumbler_off {

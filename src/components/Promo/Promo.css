@@ -53,6 +53,11 @@
   align-items: center;
   cursor: pointer;
   box-sizing: border-box;
+  transition: opacity 0.5s;
+}
+
+.promo__more-button:hover {
+  opacity: 0.8;
 }
 
 .promo__more-button-text {

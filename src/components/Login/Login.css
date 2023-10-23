@@ -13,6 +13,12 @@
 
 .login__logo {
   margin-bottom: 40px;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.login__logo:hover {
+  opacity: 0.8;
 }
 
 .login__welcome {
@@ -89,6 +95,11 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.login__button:hover {
+  opacity: 0.8;
 }
 
 .login__not-registered {
@@ -101,6 +112,11 @@
 .login__register {
   color: #4285f4;
   text-decoration: none;
+  transition: opacity 0.5s ease;
+}
+
+.login__register:hover {
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 1279px) {

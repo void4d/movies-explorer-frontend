@@ -50,6 +50,11 @@
   align-items: center;
   border-radius: 30px;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.movies-card__save-button:hover {
+  opacity: 0.8;
 }
 
 .movies-card__save-button-text {
@@ -69,6 +74,11 @@
   align-items: center;
   border-radius: 30px;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.movies-card__saved-button:hover {
+  opacity: 0.8;
 }
 
 .movies-card__check-mark-icon {
@@ -91,6 +101,11 @@
   align-items: center;
   border-radius: 30px;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.movies-card__delete-button:hover {
+  opacity: 0.8;
 }
 
 .movies-card__cross-icon {

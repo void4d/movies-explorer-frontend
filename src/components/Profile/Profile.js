@@ -2,6 +2,24 @@ function Profile() {
   const name = 'Павел';
   const mail = 'pochta@mail.ru';
 
+  const isEditing = false;
+
+  const saveProfileButton = (
+    <>
+      <span className="profile__error-message">При обновлении профиля произошла ошибка</span>
+      <button className="profile__save-button" type="submit">
+        Сохранить
+      </button>
+    </>
+  );
+
+  const EditAndLogOutButton = (
+    <>
+      <div className="profile__edit-button">Редактировать</div>
+      <div className="profile__logout-button">Выйти из аккаунта</div>
+    </>
+  );
+
   return (
     <div className="profile">
       <div className="profile__container">
@@ -16,8 +34,7 @@ function Profile() {
             <div className="profile__email">{mail}</div>
           </div>
         </div>
-        <div className="profile__edit-button">Редактировать</div>
-        <div className="profile__logout-button">Выйти из аккаунта</div>
+        {isEditing ? saveProfileButton : EditAndLogOutButton}
       </div>
     </div>
   );

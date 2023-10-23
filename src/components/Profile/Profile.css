@@ -7,6 +7,9 @@
 
 .profile__container {
   padding-top: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile__greeting {
@@ -54,6 +57,11 @@
   font-weight: 400;
   font-size: 13px;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.7;
 }
 
 .profile__logout-button {
@@ -63,6 +71,36 @@
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.profile__logout-button:hover {
+  opacity: 0.7;
+}
+
+.profile__save-button {
+  margin-bottom: 16px;
+  border: none;
+  padding: 0;
+  width: 396px;
+  height: 45px;
+  background-color: #4285f4;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.profile__save-button:hover {
+  opacity: 0.8;
+}
+
+.profile__error-message {
+  font-size: 11px;
+  color: #ff004c;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1279px) {
@@ -103,6 +141,13 @@
   }
 
   .profile__logout-button {
+    font-size: 12px;
+  }
+
+  .profile__save-button {
+    margin-bottom: 14px;
+    width: 260px;
+    height: 45px;
     font-size: 12px;
   }
 }

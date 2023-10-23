@@ -9,8 +9,8 @@ function SideMenu({ isOpen, onClose }) {
   const isProfilePage = location.pathname === '/profile';
 
   return (
-    <div className={`side-menu-overlay ${isOpen ? 'open' : ''}`}>
-      <ul className={`side-menu ${isOpen ? 'open' : ''}`}>
+    <div className={`side-menu-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
+      <ul className={`side-menu ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
         <div className="side-menu__close-button" onClick={onClose}></div>
         <li>
           <Link to="/" className="link">

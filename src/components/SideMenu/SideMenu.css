@@ -5,7 +5,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   right: -100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 .side-menu {
@@ -22,6 +22,7 @@
   flex-direction: column;
   align-items: center;
   transition: right 0.3s ease;
+  z-index: 1;
 }
 
 .open {
@@ -132,11 +133,6 @@
 
   .open {
     width: 100%;
-  }
-
-  .side-menu__close-button {
-    top: 14px;
-    right: 14px;
   }
 
   .side-menu__main {
