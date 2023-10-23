@@ -36,7 +36,6 @@ function Header({ isLoggedIn, onClick }) {
         </Link>
       </li>
       <li>
-        {' '}
         <Link to="/profile" className="link">
           <div className="header__account-button">
             <div className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</div>
@@ -58,11 +57,10 @@ function Header({ isLoggedIn, onClick }) {
         </Link>
       </li>
       <li>
-        {' '}
         <Link to="/signin" className="link">
           <div className="header__login-button">
             <div className="header__login-text">Войти</div>
-          </div>{' '}
+          </div>
         </Link>
       </li>
     </ul>
