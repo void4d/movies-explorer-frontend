@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className={`footer ${!isExistingPage ? 'footer_hidden' : ''}`}>
       <div className="footer__container">
-        <div className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</div>
+        <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
         <nav className="footer__bottom">
           <div className="footer__copyright">&copy; 2023</div>
           <ul className="footer__links">

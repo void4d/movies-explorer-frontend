@@ -9,7 +9,8 @@
 }
 
 .header__container {
-  width: 1280px;
+  max-width: 1280px;
+  min-width: 320px;
   height: 74px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -131,10 +132,6 @@
 }
 
 @media screen and (max-width: 1279px) {
-  .header__container {
-    width: 768px;
-  }
-
   .header__logo {
     padding-left: 30px;
   }
@@ -172,10 +169,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .header__container {
-    width: 320px;
-  }
-
   .header__logo {
     padding-left: 14px;
   }
