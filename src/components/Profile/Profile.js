@@ -1,13 +1,21 @@
+import { useState } from 'react';
+
 function Profile() {
+  const [isEditing, setIsEditing] = useState(false);
+
+  function handleEditClick() {
+    setIsEditing(!isEditing);
+  }
+
   const name = 'Павел';
   const mail = 'pochta@mail.ru';
 
-  const isEditing = false;
-
   const saveProfileButton = (
     <>
-      <span className="profile__error-message">При обновлении профиля произошла ошибка</span>
-      <button className="profile__save-button" type="submit">
+      <span className="profile__error-message profile__error-message_hidden">
+        При обновлении профиля произошла ошибка
+      </span>
+      <button className="profile__save-button" type="submit" onClick={handleEditClick}>
         Сохранить
       </button>
     </>
@@ -15,7 +23,9 @@ function Profile() {
 
   const EditAndLogOutButton = (
     <>
-      <div className="profile__edit-button">Редактировать</div>
+      <div className="profile__edit-button" onClick={handleEditClick}>
+        Редактировать
+      </div>
       <div className="profile__logout-button">Выйти из аккаунта</div>
     </>
   );

@@ -27,7 +27,7 @@ function Login() {
           Войти
         </button>
         <p className="login__not-registered">
-          Ещё не зарегистрированы?
+          Ещё не зарегистрированы?{' '}
           <Link to="/signup" className="link">
             <span className="login__register">Регистрация</span>
           </Link>

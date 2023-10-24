@@ -112,6 +112,7 @@
   color: #8b8b8b;
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 70px;
 }
 
 .login__register {
@@ -128,6 +129,10 @@
   .login__top {
     width: 396px;
     padding-top: 232px;
+  }
+
+  .login__not-registered {
+    margin-bottom: 232px;
   }
 }
 
