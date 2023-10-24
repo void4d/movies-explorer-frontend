@@ -13,12 +13,12 @@ function Footer() {
           <div className="footer__copyright">&copy; 2023</div>
           <ul className="footer__links">
             <li>
-              <a className="footer__link" href="https://praktikum.yandex.ru">
+              <a className="footer__link" href="https://praktikum.yandex.ru" rel="noreferrer" target="_blank">
                 Яндекс.Практикум
               </a>
             </li>
             <li>
-              <a className="footer__link" href="https://github.com/void4d">
+              <a className="footer__link" href="https://github.com/void4d" rel="noreferrer" target="_blank">
                 Github
               </a>
             </li>
