@@ -1,8 +1,11 @@
+import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 
 function MoviesCardList() {
-  const manyCards = false;
+  const location = useLocation();
   const nothingFound = false;
+
+  const savedMoviesPage = location.pathname === '/saved-movies';
 
   const movieCards = (
     <ul className="movies-card-list__container">
@@ -18,13 +21,11 @@ function MoviesCardList() {
     <>
       <div className="movies-card-list">{nothingFound ? noResults : movieCards}</div>
       <div className="movies-card-list__more">
-        <div
-          className={`movies-card-list__more-button ${
-            !nothingFound && manyCards ? '' : 'movies-card-list__more-button_hidden'
-          }`}
-        >
-          Ещё
-        </div>
+        {savedMoviesPage ? (
+          <div className="movies-card-list__divider"></div>
+        ) : (
+          <div className="movies-card-list__more-button">Ещё</div>
+        )}
       </div>
     </>
   );

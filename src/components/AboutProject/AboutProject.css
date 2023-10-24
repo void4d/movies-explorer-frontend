@@ -72,7 +72,6 @@
   text-align: center;
   background-color: #3ddc84;
   color: #000000;
-  margin-bottom: 14px;
   font-size: 14px;
   font-weight: 400;
   flex-grow: 1;
@@ -86,9 +85,8 @@
   min-width: 184px;
   height: 36px;
   background-color: #303030;
-  margin-bottom: 14px;
   font-size: 14px;
-  flex-grow: 2;
+  flex-grow: 6;
 }
 
 .about-project__progress-bar-labels {
@@ -123,7 +121,7 @@
   line-height: 17px;
   color: #8b8b8b;
   font-weight: 500;
-  flex-grow: 2;
+  flex-grow: 6;
 }
 
 @media screen and (max-width: 1279px) {
@@ -147,7 +145,7 @@
   }
 
   .about-project__details-section {
-    margin-bottom: 93px;
+    margin-bottom: 96px;
   }
 
   .about-project__details-section:last-of-type {

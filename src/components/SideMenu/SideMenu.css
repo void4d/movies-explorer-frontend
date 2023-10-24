@@ -13,11 +13,11 @@
   margin: 0;
   list-style: none;
   position: fixed;
-  width: 500px;
+  width: 520px;
   height: 100vh;
   background-color: #202020;
   top: 0;
-  right: -500px;
+  right: -520px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,8 +37,8 @@
   background-size: contain;
   background-position: center;
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 26px;
+  right: 26px;
   z-index: 1;
 }
 
@@ -135,13 +135,18 @@
     width: 100%;
   }
 
+  .side-menu__close-button {
+    top: 19px;
+    right: 19px;
+  }
+
   .side-menu__main {
-    padding-top: 159px;
+    padding-top: 145px;
     margin-bottom: 24px;
   }
 
   .side-menu__movies {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .side-menu__saved-movies {

@@ -50,6 +50,11 @@
   cursor: default;
 }
 
+.movies-card-list__divider {
+  width: 100%;
+  height: 140px;
+}
+
 .no-results {
   display: flex;
   justify-content: center;

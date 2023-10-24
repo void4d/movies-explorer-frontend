@@ -66,6 +66,10 @@
   .portfolio__link {
     font-size: 28px;
   }
+
+  .portfolio__link-container {
+    border-bottom: 1px solid #ffffff;
+  }
 }
 
 @media screen and (max-width: 767px) {
