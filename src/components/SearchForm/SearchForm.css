@@ -16,15 +16,16 @@
   border-radius: 8px;
   margin-left: 70px;
   margin-bottom: 26px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
   align-items: center;
   box-sizing: border-box;
 }
 
 .search-form__input {
-  max-width: 900px;
+  max-width: 970px;
   margin-left: 25px;
+  margin-right: 25px;
   background: none;
   outline: none;
   border: none;
@@ -32,6 +33,11 @@
   line-height: 20px;
   font-weight: 400;
   color: #8b8b8b;
+  padding-bottom: 5px;
+}
+
+.search-form__input:focus {
+  border-bottom: 1px dashed #4285f4;
 }
 
 .search-form__search-button {
@@ -126,6 +132,7 @@
 
   .search-form__input {
     margin-left: 12px;
+    margin-right: 12px;
     font-size: 16px;
     line-height: 16px;
     min-width: 185px;
@@ -133,7 +140,7 @@
 
   .search-form__search-button {
     margin-right: 6px;
-    min-width: 80px;
+    width: 80px;
     height: 44px;
   }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Profile() {
   const [isEditing, setIsEditing] = useState(false);

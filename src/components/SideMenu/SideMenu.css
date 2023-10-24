@@ -44,6 +44,12 @@
   top: 26px;
   right: 26px;
   z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__close-button:hover {
+  opacity: 0.7;
 }
 
 .side-menu__main {
@@ -57,6 +63,12 @@
   font-weight: 500;
   margin-bottom: 28px;
   text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__main:hover {
+  opacity: 0.7;
 }
 
 .side-menu__main_clicked {
@@ -76,6 +88,12 @@
   margin-bottom: 28px;
   text-align: center;
   padding-bottom: 4px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__movies:hover {
+  opacity: 0.7;
 }
 
 .side-menu__movies_clicked {
@@ -93,6 +111,12 @@
   font-weight: 500;
   margin-bottom: 620px;
   text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__saved-movies:hover {
+  opacity: 0.7;
 }
 
 .side-menu__saved-movies_clicked {
@@ -110,6 +134,7 @@
   align-items: center;
   list-style: none;
   margin: 0;
+  cursor: pointer;
 }
 
 .side-menu__account-button {
@@ -122,6 +147,11 @@
   line-height: 16px;
   font-weight: 400;
   padding-right: 13px;
+  transition: opacity 0.5s;
+}
+
+.side-menu__account {
+  opacity: 0.7;
 }
 
 .side-menu__account_clicked {
