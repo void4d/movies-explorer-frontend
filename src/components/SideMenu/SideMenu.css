@@ -30,6 +30,10 @@
 }
 
 .side-menu__close-button {
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   background-image: url('../../images/icon-cross.svg');
   width: 22px;
   height: 22px;
@@ -43,6 +47,11 @@
 }
 
 .side-menu__main {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   padding-top: 159px;
   font-size: 18px;
   font-weight: 500;
@@ -56,6 +65,11 @@
 }
 
 .side-menu__movies {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
@@ -70,6 +84,11 @@
 }
 
 .side-menu__saved-movies {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 620px;
@@ -82,6 +101,11 @@
 }
 
 .side-menu__account-container {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   display: flex;
   align-items: center;
   list-style: none;

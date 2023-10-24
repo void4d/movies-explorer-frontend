@@ -24,7 +24,7 @@ function MoviesCardList() {
         {savedMoviesPage ? (
           <div className="more-container__divider"></div>
         ) : (
-          <div className="more-container__button">Ещё</div>
+          <button className="more-container__button">Ещё</button>
         )}
       </div>
     </>

@@ -23,10 +23,10 @@ function Profile() {
 
   const EditAndLogOutButton = (
     <>
-      <div className="profile__edit-button" onClick={handleEditClick}>
+      <button className="profile__edit-button" onClick={handleEditClick}>
         Редактировать
-      </div>
-      <div className="profile__logout-button">Выйти из аккаунта</div>
+      </button>
+      <button className="profile__logout-button">Выйти из аккаунта</button>
     </>
   );
 

@@ -14,35 +14,35 @@ function Header({ isLoggedIn, onClick }) {
     location.pathname === '/profile';
 
   const menuButton = (
-    <div className="menu-button" onClick={onClick}>
+    <button className="menu-button" onClick={onClick}>
       <div className="menu-button__line"></div>
       <div className="menu-button__line"></div>
       <div className="menu-button__line"></div>
-    </div>
+    </button>
   );
 
   const loggedInContainer = (
     <ul className="header__account-container">
       <li>
         <Link to="/movies" className="link">
-          <div className={`header__movies ${isMoviesPage ? 'header__movies_clicked' : ''}`}>Фильмы</div>
+          <button className={`header__movies ${isMoviesPage ? 'header__movies_clicked' : ''}`}>Фильмы</button>
         </Link>
       </li>
       <li>
         <Link to="/saved-movies" className="link">
-          <div className={`header__saved-movies ${isSavedMoviesPage ? 'header__saved-movies_clicked' : ''}`}>
+          <button className={`header__saved-movies ${isSavedMoviesPage ? 'header__saved-movies_clicked' : ''}`}>
             Сохранённые фильмы
-          </div>
+          </button>
         </Link>
       </li>
       <li>
         <Link to="/profile" className="link">
-          <div className="header__account-button">
+          <button className="header__account-button">
             <div className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</div>
             <div className="header__account-icon-container">
               <div className="header__account-icon"></div>
             </div>
-          </div>
+          </button>
         </Link>
       </li>
       {menuButton}
@@ -53,14 +53,14 @@ function Header({ isLoggedIn, onClick }) {
     <ul className="header__account-container">
       <li>
         <Link to="/signup" className="link">
-          <div className="header__register-button">Регистрация</div>
+          <button className="header__register-button link">Регистрация</button>
         </Link>
       </li>
       <li>
         <Link to="/signin" className="link">
-          <div className="header__login-button">
-            <div className="header__login-text">Войти</div>
-          </div>
+          <button className="header__login-button">
+            <p className="header__login-text">Войти</p>
+          </button>
         </Link>
       </li>
     </ul>

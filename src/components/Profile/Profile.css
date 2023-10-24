@@ -51,6 +51,11 @@
 }
 
 .profile__edit-button {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   margin-bottom: 16px;
   display: flex;
   justify-content: center;
@@ -65,6 +70,10 @@
 }
 
 .profile__logout-button {
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   display: flex;
   justify-content: center;
   color: #ee3465;
