@@ -3,7 +3,7 @@ import Portfolio from '../Portfolio/Portfolio';
 
 function AboutMe() {
   return (
-    <div className="about-me">
+    <section className="about-me">
       <div className="about-me__container">
         <h2 className="about-me__header">Студент</h2>
         <div className="about-me__details">
@@ -23,7 +23,7 @@ function AboutMe() {
         </div>
         <Portfolio />
       </div>
-    </div>
+    </section>
   );
 }
 

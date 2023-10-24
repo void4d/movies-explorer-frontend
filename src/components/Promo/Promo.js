@@ -10,7 +10,7 @@ function Promo() {
   }
 
   return (
-    <main className="promo">
+    <section className="promo">
       <div className="promo__container">
         <div className="promo__text">
           <h1 className="promo__title">Учебный проект студента факультета Веб&#x2011;разработки.</h1>
@@ -21,7 +21,7 @@ function Promo() {
         </div>
         <img className="promo__landing-logo" src={landingLogo} alt="Веб"></img>
       </div>
-    </main>
+    </section>
   );
 }
 
