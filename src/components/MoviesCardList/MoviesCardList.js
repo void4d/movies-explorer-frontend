@@ -20,11 +20,11 @@ function MoviesCardList() {
   return (
     <>
       <div className="movies-card-list">{nothingFound ? noResults : movieCards}</div>
-      <div className="movies-card-list__more">
+      <div className="more-container">
         {savedMoviesPage ? (
-          <div className="movies-card-list__divider"></div>
+          <div className="more-container__divider"></div>
         ) : (
-          <div className="movies-card-list__more-button">Ещё</div>
+          <div className="more-container__button">Ещё</div>
         )}
       </div>
     </>
