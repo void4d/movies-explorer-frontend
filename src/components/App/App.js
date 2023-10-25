@@ -17,10 +17,12 @@ function App() {
 
   function openSideMenu(e) {
     setIsSideMenuOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeSideMenu() {
     setIsSideMenuOpen(false);
+    document.body.style.overflow = 'unset';
   }
 
   const isLoggedIn = true;

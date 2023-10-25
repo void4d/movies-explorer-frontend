@@ -41,11 +41,7 @@
 }
 
 .header__movies {
-  color: #ffffff;
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  margin: 0;
   padding-right: 20px;
   cursor: pointer;
   font-size: 14px;
@@ -64,11 +60,7 @@
 }
 
 .header__saved-movies {
-  color: #ffffff;
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  margin: 0;
   padding-right: 50px;
   cursor: pointer;
   font-size: 14px;
@@ -86,11 +78,6 @@
 }
 
 .header__account-button {
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
-  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,6 +86,7 @@
 }
 
 .header__account {
+  margin: 0;
   padding-right: 13px;
   font-size: 14px;
   line-height: 16px;
@@ -136,10 +124,7 @@
 }
 
 .header__register-button {
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  margin: 0;
   padding-right: 30px;
   cursor: pointer;
   font-size: 12px;
@@ -153,10 +138,6 @@
 }
 
 .header__login-button {
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
   margin-right: 70px;
   background-color: #3ddc84;
   width: 76px;

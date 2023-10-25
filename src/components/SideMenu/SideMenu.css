@@ -23,6 +23,7 @@
   align-items: center;
   transition: right 0.3s ease;
   z-index: 1;
+  overflow-y: scroll;
 }
 
 .open {
@@ -52,12 +53,17 @@
   opacity: 0.7;
 }
 
-.side-menu__main {
-  color: #ffffff;
+.side-menu__navigation {
+  margin: 0;
+  list-style: none;
   padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-menu__main {
+  margin: 0;
   padding-top: 159px;
   font-size: 18px;
   font-weight: 500;
@@ -77,11 +83,7 @@
 }
 
 .side-menu__movies {
-  color: #ffffff;
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  margin: 0;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
@@ -102,11 +104,7 @@
 }
 
 .side-menu__saved-movies {
-  color: #ffffff;
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
+  margin: 0;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 620px;
@@ -125,16 +123,12 @@
 }
 
 .side-menu__account-container {
-  color: #ffffff;
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
   display: flex;
   align-items: center;
   list-style: none;
   margin: 0;
   cursor: pointer;
+  margin-bottom: 92px;
 }
 
 .side-menu__account-button {
@@ -205,5 +199,9 @@
 
   .side-menu__saved-movies {
     margin-bottom: 444px;
+  }
+
+  .side-menu__account-container {
+    margin-bottom: 48px;
   }
 }
