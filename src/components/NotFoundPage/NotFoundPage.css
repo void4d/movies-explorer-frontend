@@ -23,6 +23,7 @@
 
 .not-found-page__go-back {
   margin: 0;
+  padding-bottom: 60px;
   font-size: 14px;
   color: #4285f4;
   cursor: pointer;
@@ -31,6 +32,10 @@
 @media screen and (max-width: 1279px) {
   .not-found-page__code {
     padding-top: 415px;
+  }
+
+  .not-found-page__go-back {
+    padding-bottom: 222px;
   }
 }
 
@@ -47,5 +52,9 @@
     margin-bottom: 284px;
     font-size: 12px;
     font-weight: 400;
+  }
+
+  .not-found-page__go-back {
+    padding-bottom: 30px;
   }
 }
