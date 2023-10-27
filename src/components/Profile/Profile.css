@@ -122,6 +122,19 @@
   display: none;
 }
 
+.input {
+  background: none;
+  outline: none;
+  border: none;
+  text-align: end;
+  color: #ffffff;
+  width: 150px;
+}
+
+.input:focus {
+  border: 1px dashed #4285f4;
+}
+
 @media screen and (max-width: 1279px) {
   .profile__container {
     padding-top: 74px;
