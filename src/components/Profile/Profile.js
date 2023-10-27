@@ -1,42 +1,70 @@
+import { useState, useRef, useEffect } from 'react';
+
 function Profile() {
+  const inputRef = useRef(null);
+  const [isEditing, setIsEditing] = useState(false);
   const name = 'Павел';
   const mail = 'pochta@mail.ru';
 
-  const isEditing = false;
+  function handleEditClick() {
+    setIsEditing(!isEditing);
+  }
 
-  const saveProfileButton = (
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
+
+  const editProfileData = (
     <>
-      <span className="profile__error-message">При обновлении профиля произошла ошибка</span>
-      <button className="profile__save-button" type="submit">
+      <div className="profile__data">
+        <div className="profile__username-container">
+          <div className="profile__username">Имя</div>
+          <input ref={inputRef} className="profile__username input" placeholder="Введите имя"></input>
+        </div>
+        <div className="profile__email-container">
+          <div className="profile__email">E-mail</div>
+          <input className="profile__email input" placeholder="Введите E-mail"></input>
+        </div>
+      </div>
+      <span className="profile__error-message profile__error-message_hidden">
+        При обновлении профиля произошла ошибка
+      </span>
+      <button className="profile__save-button" type="submit" onClick={handleEditClick}>
         Сохранить
       </button>
     </>
   );
 
-  const EditAndLogOutButton = (
+  const profileData = (
     <>
-      <div className="profile__edit-button">Редактировать</div>
-      <div className="profile__logout-button">Выйти из аккаунта</div>
+      <div className="profile__data">
+        <div className="profile__username-container">
+          <div className="profile__username">Имя</div>
+          <div className="profile__username">{name}</div>
+        </div>
+        <div className="profile__email-container">
+          <div className="profile__email">E-mail</div>
+          <div className="profile__email">{mail}</div>
+        </div>
+      </div>
+      <button className="profile__edit-button" onClick={handleEditClick}>
+        Редактировать
+      </button>
+      <button className="profile__logout-button">Выйти из аккаунта</button>
     </>
   );
 
   return (
-    <div className="profile">
-      <div className="profile__container">
-        <h2 className="profile__greeting">Привет, {name}!</h2>
-        <div className="profile__data">
-          <div className="profile__username-container">
-            <div className="profile__username">Имя</div>
-            <div className="profile__username">{name}</div>
-          </div>
-          <div className="profile__email-container">
-            <div className="profile__email">E-mail</div>
-            <div className="profile__email">{mail}</div>
-          </div>
+    <main>
+      <section className="profile">
+        <div className="profile__container">
+          <h2 className="profile__greeting">Привет, {name}!</h2>
+          {isEditing ? editProfileData : profileData}
         </div>
-        {isEditing ? saveProfileButton : EditAndLogOutButton}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

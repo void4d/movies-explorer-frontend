@@ -43,7 +43,7 @@
 
 .register__input-name {
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-size: 10px;
   font-weight: 400;
   color: #8b8b8b;
@@ -58,7 +58,7 @@
   outline: none;
   border-bottom: 1px solid #424242;
   color: #ffffff;
-  margin-bottom: 24px;
+  margin-bottom: 27px;
 }
 
 .register__input:focus {
@@ -112,6 +112,7 @@
   color: #8b8b8b;
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 70px;
 }
 
 .register__enter {
@@ -128,6 +129,10 @@
   .register__top {
     width: 396px;
     padding-top: 232px;
+  }
+
+  .register__already-registered {
+    margin-bottom: 232px;
   }
 }
 

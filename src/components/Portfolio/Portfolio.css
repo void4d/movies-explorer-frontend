@@ -12,6 +12,8 @@
   line-height: 20px;
   margin-bottom: 50px;
   font-weight: 400;
+  padding-left: 70px;
+  padding-right: 70px;
 }
 
 .portfolio__link-container {
@@ -63,8 +65,17 @@
     padding-right: 50px;
   }
 
+  .portfolio__header {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   .portfolio__link {
     font-size: 28px;
+  }
+
+  .portfolio__link-container {
+    border-bottom: 1px solid #ffffff;
   }
 }
 
@@ -77,6 +88,8 @@
   .portfolio__header {
     margin-bottom: 40px;
     font-size: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .portfolio__link-container {

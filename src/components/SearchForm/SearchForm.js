@@ -18,10 +18,10 @@ function SearchForm() {
         </div>
 
         <div className="search-form__short-container">
-          <div
+          <button
             className={`search-form__short-tumbler ${isTumblerOn ? '' : 'search-form__short-tumbler_off'}`}
             onClick={toggleTumbler}
-          ></div>
+          ></button>
           <p className="search-form__short-text">Короткометражки</p>
         </div>
         <div className="search-form__divider"></div>

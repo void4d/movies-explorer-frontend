@@ -3,7 +3,7 @@ import Portfolio from '../Portfolio/Portfolio';
 
 function AboutMe() {
   return (
-    <div className="about-me">
+    <section className="about-me">
       <div className="about-me__container">
         <h2 className="about-me__header">Студент</h2>
         <div className="about-me__details">
@@ -15,7 +15,7 @@ function AboutMe() {
               Nulla nec mauris eget metus fermentum consequat. Vivamus sit amet urna ut nisi aliquam venenatis. Integer
               commodo ex eu ex vestibulum, in tristique erat tincidunt.
             </p>
-            <a className="about-me__github" href="https://github.com/void4d">
+            <a className="about-me__github" href="https://github.com/void4d" rel="noreferrer" target="_blank">
               Github
             </a>
           </div>
@@ -23,7 +23,7 @@ function AboutMe() {
         </div>
         <Portfolio />
       </div>
-    </div>
+    </section>
   );
 }
 

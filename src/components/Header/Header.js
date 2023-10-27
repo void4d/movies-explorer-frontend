@@ -14,53 +14,55 @@ function Header({ isLoggedIn, onClick }) {
     location.pathname === '/profile';
 
   const menuButton = (
-    <div className="menu-button" onClick={onClick}>
-      <div className="menu-button__line"></div>
-      <div className="menu-button__line"></div>
-      <div className="menu-button__line"></div>
-    </div>
+    <button className="menu-button" onClick={onClick}>
+      <span className="menu-button__line"></span>
+      <span className="menu-button__line"></span>
+      <span className="menu-button__line"></span>
+    </button>
   );
 
   const loggedInContainer = (
-    <ul className="header__account-container">
-      <li>
-        <Link to="/movies" className="link">
-          <div className={`header__movies ${isMoviesPage ? 'header__movies_clicked' : ''}`}>Фильмы</div>
-        </Link>
-      </li>
-      <li>
-        <Link to="/saved-movies" className="link">
-          <div className={`header__saved-movies ${isSavedMoviesPage ? 'header__saved-movies_clicked' : ''}`}>
-            Сохранённые фильмы
-          </div>
-        </Link>
-      </li>
-      <li>
-        <Link to="/profile" className="link">
-          <div className="header__account-button">
-            <div className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</div>
-            <div className="header__account-icon-container">
-              <div className="header__account-icon"></div>
+    <>
+      <ul className="header__account-container">
+        <li>
+          <Link to="/movies" className="link">
+            <p className={`header__movies ${isMoviesPage ? 'header__movies_clicked' : ''}`}>Фильмы</p>
+          </Link>
+        </li>
+        <li>
+          <Link to="/saved-movies" className="link">
+            <p className={`header__saved-movies ${isSavedMoviesPage ? 'header__saved-movies_clicked' : ''}`}>
+              Сохранённые фильмы
+            </p>
+          </Link>
+        </li>
+        <li>
+          <Link to="/profile" className="link">
+            <div className="header__account-button">
+              <p className={`header__account ${isProfilePage ? 'header__account_clicked' : ''}`}>Аккаунт</p>
+              <div className="header__account-icon-container">
+                <div className="header__account-icon"></div>
+              </div>
             </div>
-          </div>
-        </Link>
-      </li>
+          </Link>
+        </li>
+      </ul>
       {menuButton}
-    </ul>
+    </>
   );
 
   const loggedOutContainer = (
     <ul className="header__account-container">
       <li>
         <Link to="/signup" className="link">
-          <div className="header__register-button">Регистрация</div>
+          <p className="header__register-button link">Регистрация</p>
         </Link>
       </li>
       <li>
         <Link to="/signin" className="link">
-          <div className="header__login-button">
-            <div className="header__login-text">Войти</div>
-          </div>
+          <button className="header__login-button">
+            <p className="header__login-text">Войти</p>
+          </button>
         </Link>
       </li>
     </ul>

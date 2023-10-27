@@ -13,16 +13,17 @@
   margin: 0;
   list-style: none;
   position: fixed;
-  width: 500px;
+  width: 520px;
   height: 100vh;
   background-color: #202020;
   top: 0;
-  right: -500px;
+  right: -520px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: right 0.3s ease;
   z-index: 1;
+  overflow-y: scroll;
 }
 
 .open {
@@ -30,6 +31,10 @@
 }
 
 .side-menu__close-button {
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   background-image: url('../../images/icon-cross.svg');
   width: 22px;
   height: 22px;
@@ -37,17 +42,39 @@
   background-size: contain;
   background-position: center;
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 26px;
+  right: 26px;
   z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__close-button:hover {
+  opacity: 0.7;
+}
+
+.side-menu__navigation {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .side-menu__main {
+  margin: 0;
   padding-top: 159px;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 28px;
   text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__main:hover {
+  opacity: 0.7;
 }
 
 .side-menu__main_clicked {
@@ -56,12 +83,19 @@
 }
 
 .side-menu__movies {
+  margin: 0;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   margin-bottom: 28px;
   text-align: center;
   padding-bottom: 4px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__movies:hover {
+  opacity: 0.7;
 }
 
 .side-menu__movies_clicked {
@@ -70,10 +104,17 @@
 }
 
 .side-menu__saved-movies {
+  margin: 0;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 620px;
   text-align: center;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.side-menu__saved-movies:hover {
+  opacity: 0.7;
 }
 
 .side-menu__saved-movies_clicked {
@@ -86,6 +127,8 @@
   align-items: center;
   list-style: none;
   margin: 0;
+  cursor: pointer;
+  margin-bottom: 92px;
 }
 
 .side-menu__account-button {
@@ -98,6 +141,11 @@
   line-height: 16px;
   font-weight: 400;
   padding-right: 13px;
+  transition: opacity 0.5s;
+}
+
+.side-menu__account {
+  opacity: 0.7;
 }
 
 .side-menu__account_clicked {
@@ -127,7 +175,7 @@
 
 @media screen and (max-width: 767px) {
   .side-menu {
-    width: -100%;
+    width: 0;
     height: 100vh;
   }
 
@@ -135,16 +183,25 @@
     width: 100%;
   }
 
+  .side-menu__close-button {
+    top: 19px;
+    right: 19px;
+  }
+
   .side-menu__main {
-    padding-top: 159px;
+    padding-top: 145px;
     margin-bottom: 24px;
   }
 
   .side-menu__movies {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .side-menu__saved-movies {
     margin-bottom: 444px;
+  }
+
+  .side-menu__account-container {
+    margin-bottom: 48px;
   }
 }

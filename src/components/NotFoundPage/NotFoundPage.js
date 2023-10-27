@@ -11,6 +11,7 @@ function NotFoundPage() {
     <div className="not-found-page">
       <h1 className="not-found-page__code">404</h1>
       <p className="not-found-page__message">Страница не найдена</p>
+
       <p className="not-found-page__go-back" onClick={goBack}>
         Назад
       </p>

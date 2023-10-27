@@ -17,32 +17,30 @@ function App() {
 
   function openSideMenu(e) {
     setIsSideMenuOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeSideMenu() {
     setIsSideMenuOpen(false);
+    document.body.style.overflow = 'unset';
   }
 
   const isLoggedIn = true;
 
   return (
     <div className="app">
-      <div>
-        <Header isLoggedIn={isLoggedIn} onClick={openSideMenu} />
-        <Routes>
-          <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/saved-movies" element={<SavedMovies />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/signup" element={<Register />} />
-          <Route path="/signin" element={<Login />} />
-          <Route path="*" element={<NotFoundPage />}></Route>
-        </Routes>
-        <SideMenu isOpen={isSideMenuOpen} onClose={closeSideMenu} />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <Header isLoggedIn={isLoggedIn} onClick={openSideMenu} />
+      <Routes>
+        <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/saved-movies" element={<SavedMovies />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="*" element={<NotFoundPage />}></Route>
+      </Routes>
+      <Footer />
+      <SideMenu isOpen={isSideMenuOpen} onClose={closeSideMenu} />
     </div>
   );
 }

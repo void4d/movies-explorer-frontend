@@ -40,6 +40,11 @@
 }
 
 .movies-card__save-button {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   margin-top: 18px;
   width: 100px;
   height: 29px;
@@ -64,6 +69,11 @@
 }
 
 .movies-card__saved-button {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   margin-top: 18px;
   width: 100px;
   height: 29px;
@@ -91,6 +101,11 @@
 }
 
 .movies-card__delete-button {
+  color: #ffffff;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
   margin-top: 18px;
   width: 100px;
   height: 29px;

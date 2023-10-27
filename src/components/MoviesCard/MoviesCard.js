@@ -8,21 +8,21 @@ function MoviesCard() {
   const savedMoviesPage = location.pathname === '/saved-movies';
 
   const saveButton = (
-    <div className="movies-card__save-button">
+    <button className="movies-card__save-button">
       <div className="movies-card__save-button-text">Сохранить</div>
-    </div>
+    </button>
   );
 
   const savedButton = (
-    <div className="movies-card__saved-button">
+    <button className="movies-card__saved-button">
       <div className="movies-card__check-mark-icon"></div>
-    </div>
+    </button>
   );
 
   const deleteButton = (
-    <div className="movies-card__delete-button">
+    <button className="movies-card__delete-button">
       <div className="movies-card__cross-icon"></div>
-    </div>
+    </button>
   );
 
   return (

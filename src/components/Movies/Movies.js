@@ -4,11 +4,13 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 
 function Movies() {
   return (
-    <>
-      <SearchForm />
-      {/* <Preloader /> */}
-      <MoviesCardList />
-    </>
+    <main>
+      <section>
+        <SearchForm />
+        {/* <Preloader /> */}
+        <MoviesCardList />
+      </section>
+    </main>
   );
 }
 
