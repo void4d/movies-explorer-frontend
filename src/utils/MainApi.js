@@ -1,3 +1,5 @@
+import { mainApiUrl } from './Constants';
+
 export default class MainApi {
   constructor(config) {
     this.url = config.url;
@@ -11,7 +13,7 @@ export default class MainApi {
     }
   }
 
-  getMovies(res) {
+  getSavedMovies() {
     return fetch(`${this._url}/movies`, {
       headers: {
         'Content-type': 'application/json',
@@ -72,3 +74,7 @@ export default class MainApi {
     }).then(this._handleResponse);
   }
 }
+
+export const mainApi = new MainApi({
+  url: mainApiUrl,
+});
