@@ -16,7 +16,15 @@ function MoviesCard({ movie, handleSave, handleUnsave, savedMovies }) {
   const movieDuration = formatDuration(movie.duration);
 
   const isSavedMovie = savedMovies.some((m) => movie.id === m.movieId);
-  const isSavedInStorage = JSON.parse(localStorage.getItem('savedMovies')).some((m) => movie.id === m.id);
+
+  let isSavedInStorage = false;
+  const savedMoviesInStorage = JSON.parse(localStorage.getItem('savedMovies'));
+
+  if (savedMoviesInStorage && savedMoviesInStorage > 0) {
+    isSavedInStorage = savedMoviesInStorage.some((m) => movie.id === m.id);
+  } else {
+    isSavedInStorage = false;
+  }
 
   function handleSaveButtonClick() {
     if (!isSaved) {
