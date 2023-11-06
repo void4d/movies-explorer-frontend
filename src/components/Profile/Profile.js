@@ -1,10 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Profile() {
+function Profile({ handleLogOut }) {
+  const currentUser = React.useContext(CurrentUserContext);
+
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+
   const inputRef = useRef(null);
   const [isEditing, setIsEditing] = useState(false);
-  const name = 'Павел';
-  const mail = 'pochta@mail.ru';
 
   function handleEditClick() {
     setIsEditing(!isEditing);
@@ -16,16 +20,30 @@ function Profile() {
     }
   }, [isEditing]);
 
+  useEffect(() => {
+    setName(localStorage.getItem('name'));
+    setEmail(localStorage.getItem('email'));
+  }, []);
+
   const editProfileData = (
     <>
       <div className="profile__data">
         <div className="profile__username-container">
           <div className="profile__username">Имя</div>
-          <input ref={inputRef} className="profile__username input" placeholder="Введите имя"></input>
+          <input
+            ref={inputRef}
+            className="profile__username input"
+            placeholder="Введите имя"
+            onChange={(e) => setName(e.target.value)}
+          ></input>
         </div>
         <div className="profile__email-container">
           <div className="profile__email">E-mail</div>
-          <input className="profile__email input" placeholder="Введите E-mail"></input>
+          <input
+            className="profile__email input"
+            placeholder="Введите E-mail"
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
         </div>
       </div>
       <span className="profile__error-message profile__error-message_hidden">
@@ -46,13 +64,15 @@ function Profile() {
         </div>
         <div className="profile__email-container">
           <div className="profile__email">E-mail</div>
-          <div className="profile__email">{mail}</div>
+          <div className="profile__email">{email}</div>
         </div>
       </div>
       <button className="profile__edit-button" onClick={handleEditClick}>
         Редактировать
       </button>
-      <button className="profile__logout-button">Выйти из аккаунта</button>
+      <button className="profile__logout-button" onClick={handleLogOut}>
+        Выйти из аккаунта
+      </button>
     </>
   );
 

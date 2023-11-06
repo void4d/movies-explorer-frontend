@@ -1,4 +1,4 @@
-import MainApi from './MainApi';
+import { mainApiUrl } from './Constants';
 
 export default class Auth {
   constructor(config) {
@@ -40,3 +40,7 @@ export default class Auth {
     }).then(this._handleResponse);
   }
 }
+
+export const auth = new Auth({
+  url: mainApiUrl,
+});

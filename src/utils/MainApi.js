@@ -2,7 +2,7 @@ import { mainApiUrl } from './Constants';
 
 export default class MainApi {
   constructor(config) {
-    this.url = config.url;
+    this._url = config.url;
   }
 
   _handleResponse(res) {
@@ -13,19 +13,21 @@ export default class MainApi {
     }
   }
 
-  getSavedMovies() {
+  getSavedMovies(token) {
     return fetch(`${this._url}/movies`, {
       headers: {
         'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     }).then(this._handleResponse);
   }
 
-  createMovie(res) {
+  createMovie(res, token) {
     return fetch(`${this._url}/movies`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         country: res.country,
@@ -33,39 +35,42 @@ export default class MainApi {
         duration: res.duration,
         year: res.year,
         description: res.description,
-        image: res.image,
+        image: `https://api.nomoreparties.co/${res.image.url}`,
         trailerLink: res.trailerLink,
-        thumbnail: res.thumbnail,
-        movieId: res.movieId,
+        thumbnail: `https://api.nomoreparties.co/${res.image.formats.thumbnail.url}`,
+        movieId: res.id,
         nameRU: res.nameRU,
         nameEN: res.nameEN,
       }),
     }).then(this._handleResponse);
   }
 
-  deleteMovie(movieId) {
+  deleteMovie(movieId, token) {
     return fetch(`${this._url}/movies/${movieId}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     }).then(this._handleResponse);
   }
 
-  getProfile() {
+  getProfile(token) {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     }).then(this._handleResponse);
   }
 
-  updateProfile(name, email) {
+  updateProfile(name, email, token) {
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         name,

@@ -20,6 +20,11 @@
   font-size: 15px;
   line-height: 18px;
   font-weight: 500;
+  width: 224px;
+  height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .movies-card__details-duration {
@@ -32,6 +37,7 @@
 }
 
 .movies-card__thumbnail {
+  display: block;
   margin-top: 18px;
   width: 100%;
   height: 200px;
