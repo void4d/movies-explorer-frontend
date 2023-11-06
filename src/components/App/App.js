@@ -32,7 +32,7 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [moreButton, setMoreButton] = React.useState(false);
   const [shortMovies, setShortMovies] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery'));
+  const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') ?? '');
   const [isNetworkError, setIsNetworkError] = useState(false);
 
   const navigate = useNavigate();
@@ -153,9 +153,9 @@ function App() {
   }
 
   function handleSave(movie) {
-    mainApi.createMovie(movie, jwt).then(() => {
+    mainApi.createMovie(movie, jwt).then((m) => {
       setSavedMovies((prevSavedMovies) => {
-        const updatedSavedMovies = [movie, ...prevSavedMovies];
+        const updatedSavedMovies = [m, ...prevSavedMovies];
         localStorage.setItem('savedMovies', JSON.stringify(updatedSavedMovies));
         return updatedSavedMovies;
       });
