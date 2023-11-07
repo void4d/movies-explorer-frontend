@@ -27,13 +27,13 @@ function App() {
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [isFieldEmpty, setIsFieldEmpty] = React.useState(false);
+  const [isNetworkError, setIsNetworkError] = useState(false);
   const [nothingFound, setNothingFound] = React.useState(false);
   const [moviesCardList, setMoviesCardList] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [moreButton, setMoreButton] = React.useState(false);
   const [shortMovies, setShortMovies] = useState(false);
   const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') ?? '');
-  const [isNetworkError, setIsNetworkError] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -81,6 +81,8 @@ function App() {
   }
 
   function handleLogOut() {
+    setMoviesCardList([]);
+    setSavedMovies([]);
     localStorage.clear();
     setIsLoggedIn(false);
     navigate('/');
@@ -93,10 +95,22 @@ function App() {
 
   function turnShortMoviesOff() {
     setShortMovies(false);
+
     if (moviesPage) {
-      setMoviesCardList(JSON.parse(localStorage.getItem('searchedMovies')));
+      const localStorageSearchedMovies = JSON.parse(localStorage.getItem('searchedMovies'));
+      if (localStorageSearchedMovies && localStorageSearchedMovies.length > 0) {
+        setMoviesCardList(localStorageSearchedMovies);
+      } else {
+        setMoviesCardList([]);
+      }
     } else {
-      setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')));
+      const localStorageSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
+      if (localStorageSavedMovies && localStorageSavedMovies.length > 0) {
+        setSavedMovies(localStorageSavedMovies);
+      } else {
+        setSavedMovies([]);
+      }
+      setSavedMovies(localStorageSavedMovies);
     }
   }
 
