@@ -9,9 +9,8 @@ import Preloader from '../Preloader/Preloader.js';
 function SavedMovies({
   handleUnsave,
   savedMovies,
-  getSavedMovies,
   isLoading,
-  toggleShortMovies,
+  turnShortMoviesOn,
   findInSavedMovies,
   handleSearchChange,
   shortMovies,
@@ -19,17 +18,28 @@ function SavedMovies({
   nothingFound,
   searchQuery,
   setSearchQuery,
+  turnShortMoviesOff,
+  setShortMovies,
+  setSavedMovies,
 }) {
+  const location = useLocation();
+  const moviesPage = location.pathname === '/movies';
+
   React.useEffect(() => {
-    getSavedMovies();
+    if (moviesPage && localStorage.getItem('searchedMovies')) {
+      setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')));
+    }
+
     setSearchQuery('');
+    setShortMovies(false);
   }, []);
 
   return (
     <main>
       <section>
         <SearchForm
-          toggleShortMovies={toggleShortMovies}
+          turnShortMoviesOn={turnShortMoviesOn}
+          turnShortMoviesOff={turnShortMoviesOff}
           findInSavedMovies={findInSavedMovies}
           handleSearchChange={handleSearchChange}
           shortMovies={shortMovies}

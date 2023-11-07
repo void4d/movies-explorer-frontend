@@ -1,6 +1,14 @@
 import { useLocation } from 'react-router-dom';
 
-function SearchForm({ toggleShortMovies, shortMovies, findMovie, handleSearchChange, searchQuery, findInSavedMovies }) {
+function SearchForm({
+  turnShortMoviesOff,
+  turnShortMoviesOn,
+  shortMovies,
+  findMovie,
+  handleSearchChange,
+  searchQuery,
+  findInSavedMovies,
+}) {
   const location = useLocation();
   const savedMoviesPage = location.pathname === '/saved-movies';
   const moviesPage = location.pathname === '/movies';
@@ -27,7 +35,7 @@ function SearchForm({ toggleShortMovies, shortMovies, findMovie, handleSearchCha
         <div className="search-form__short-container">
           <button
             className={`search-form__short-tumbler ${shortMovies ? '' : 'search-form__short-tumbler_off'}`}
-            onClick={toggleShortMovies}
+            onClick={shortMovies ? turnShortMoviesOff : turnShortMoviesOn}
             type="button"
           ></button>
           <p className="search-form__short-text">Короткометражки</p>

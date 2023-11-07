@@ -10,7 +10,8 @@ function Movies({
   searchQuery,
   setSearchQuery,
   setMoviesCardList,
-  toggleShortMovies,
+  turnShortMoviesOn,
+  turnShortMoviesOff,
   moviesCardList,
   shortMovies,
   findMovie,
@@ -22,6 +23,7 @@ function Movies({
   isNetworkError,
   setMoreButton,
   savedMovies,
+  setShortMovies,
 }) {
   const location = useLocation();
   const moviesPage = location.pathname === '/movies';
@@ -36,13 +38,16 @@ function Movies({
         setMoviesCardList([]);
       }
     }
+
+    setShortMovies(false);
   }, [moviesPage]);
 
   return (
     <main>
       <section>
         <SearchForm
-          toggleShortMovies={toggleShortMovies}
+          turnShortMoviesOn={turnShortMoviesOn}
+          turnShortMoviesOff={turnShortMoviesOff}
           shortMovies={shortMovies}
           findMovie={findMovie}
           handleSearchChange={handleSearchChange}
