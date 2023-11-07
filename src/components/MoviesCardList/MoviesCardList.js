@@ -18,6 +18,7 @@ function MoviesCardList({
 }) {
   const location = useLocation();
   const savedMoviesPage = location.pathname === '/saved-movies';
+  const moviesPage = location.pathname === '/movies';
 
   const [visibleMovies, setVisibleMovies] = useState(12);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -90,7 +91,7 @@ function MoviesCardList({
         setMoreButton(true);
       }
     }
-  }, [moviesCardList, visibleMovies, setMoreButton]);
+  }, [moviesCardList, visibleMovies, setMoreButton, moviesPage]);
 
   const noResultsMessage = <div className="no-results">Поиск не дал результатов</div>;
   const noKeyWordMessage = <div className="no-results">Введите ключевое слово</div>;

@@ -4,7 +4,9 @@ import React from 'react';
 function MoviesCard({ movie, handleSave, handleUnsave, savedMovies }) {
   const location = useLocation();
   const savedMoviesPage = location.pathname === '/saved-movies';
-  const [isSaved, setIsSaved] = React.useState(false);
+  const [isSaved, setIsSaved] = React.useState(
+    JSON.parse(localStorage.getItem('savedMovies')).some((m) => movie.id === m.movieId) ?? false
+  );
 
   function formatDuration(duration) {
     const hours = Math.floor(duration / 60);
@@ -21,7 +23,7 @@ function MoviesCard({ movie, handleSave, handleUnsave, savedMovies }) {
   const savedMoviesInStorage = JSON.parse(localStorage.getItem('savedMovies'));
 
   if (savedMoviesInStorage && savedMoviesInStorage > 0) {
-    isSavedInStorage = savedMoviesInStorage.some((m) => movie.id === m.id);
+    isSavedInStorage = savedMoviesInStorage.some((m) => movie.id === m.movieId);
   } else {
     isSavedInStorage = false;
   }

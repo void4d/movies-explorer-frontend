@@ -83,7 +83,7 @@ function App() {
     navigate('/');
   }
 
-  function toggleShortMovies(e) {
+  function toggleShortMovies() {
     setShortMovies(!shortMovies);
   }
 
@@ -138,7 +138,41 @@ function App() {
     const moviesList = JSON.parse(localStorage.getItem('moviesList'));
 
     if (moviesList) {
-      const filteredMovies = moviesList.filter((movie) => {
+      const filteredSavedMovies = moviesList.filter((movie) => {
+        return (
+          movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      });
+
+      return filteredSavedMovies;
+    } else {
+      setNothingFound(true);
+      return [];
+    }
+  }
+
+  function findInSavedMovies(e) {
+    e.preventDefault();
+
+    if (searchQuery === '') {
+      setIsFieldEmpty(true);
+    } else {
+      setIsFieldEmpty(false);
+      const filteredSavedMovies = searchSavedMoviesInLocalStorage(searchQuery);
+      if (filteredSavedMovies.length === 0) {
+        setNothingFound(true);
+      }
+
+      setSavedMovies(filteredSavedMovies);
+    }
+  }
+
+  function searchSavedMoviesInLocalStorage(searchQuery) {
+    const savedMoviesList = JSON.parse(localStorage.getItem('savedMovies'));
+
+    if (savedMoviesList) {
+      const filteredMovies = savedMoviesList.filter((movie) => {
         return (
           movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
           movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
@@ -238,6 +272,14 @@ function App() {
                 savedMovies={savedMovies}
                 isLoading={isLoading}
                 getSavedMovies={getSavedMovies}
+                toggleShortMovies={toggleShortMovies}
+                findInSavedMovies={findInSavedMovies}
+                handleSearchChange={handleSearchChange}
+                isFieldEmpty={isFieldEmpty}
+                nothingFound={nothingFound}
+                shortMovies={shortMovies}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
               />
             }
           />

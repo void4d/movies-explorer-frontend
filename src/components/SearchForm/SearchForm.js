@@ -1,4 +1,10 @@
-function SearchForm({ toggleShortMovies, shortMovies, findMovie, handleSearchChange, searchQuery }) {
+import { useLocation } from 'react-router-dom';
+
+function SearchForm({ toggleShortMovies, shortMovies, findMovie, handleSearchChange, searchQuery, findInSavedMovies }) {
+  const location = useLocation();
+  const savedMoviesPage = location.pathname === '/saved-movies';
+  const moviesPage = location.pathname === '/movies';
+
   return (
     <form className="search-form">
       <div className="search-form__container">
@@ -9,7 +15,11 @@ function SearchForm({ toggleShortMovies, shortMovies, findMovie, handleSearchCha
             onChange={handleSearchChange}
             value={searchQuery}
           ></input>
-          <button className="search-form__search-button" type="submit" onClick={findMovie}>
+          <button
+            className="search-form__search-button"
+            type="submit"
+            onClick={moviesPage ? findMovie : findInSavedMovies}
+          >
             Поиск
           </button>
         </div>
