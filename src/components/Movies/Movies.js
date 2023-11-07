@@ -24,23 +24,20 @@ function Movies({
   setMoreButton,
   savedMovies,
   setShortMovies,
+  setIsFieldEmpty,
 }) {
   const location = useLocation();
   const moviesPage = location.pathname === '/movies';
 
   useEffect(() => {
-    if (moviesPage) {
-      if (localStorage.getItem('searchQuery') && localStorage.getItem('searchedMovies')) {
-        setSearchQuery(localStorage.getItem('searchQuery'));
-        setMoviesCardList(JSON.parse(localStorage.getItem('searchedMovies')));
-      } else {
-        setSearchQuery('');
-        setMoviesCardList([]);
-      }
+    if (moviesPage && localStorage.getItem('searchQuery') && localStorage.getItem('searchedMovies')) {
+      setSearchQuery(localStorage.getItem('searchQuery'));
+      setMoviesCardList(JSON.parse(localStorage.getItem('searchedMovies')));
     }
 
+    setIsFieldEmpty(false);
     setShortMovies(false);
-  }, [moviesPage]);
+  }, []);
 
   return (
     <main>
