@@ -1,17 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { useForm } from '../../utils/Validation';
 
-function Profile({ handleLogOut }) {
-  const currentUser = React.useContext(CurrentUserContext);
-
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
+function Profile({
+  handleLogOut,
+  handleUpdateProfile,
+  profileNotification,
+  isEditing,
+  setIsEditing,
+  profileError,
+  isSuccesfullUpdate,
+}) {
+  const { values, handleChange, setValues } = useForm();
 
   const inputRef = useRef(null);
-  const [isEditing, setIsEditing] = useState(false);
 
-  function handleEditClick() {
-    setIsEditing(!isEditing);
+  function enableEditing() {
+    setIsEditing(true);
+  }
+
+  function endEditing(e) {
+    e.preventDefault();
+    const { name, email } = values;
+
+    if (name && email) {
+      handleUpdateProfile(name, email);
+    }
   }
 
   useEffect(() => {
@@ -21,8 +34,7 @@ function Profile({ handleLogOut }) {
   }, [isEditing]);
 
   useEffect(() => {
-    setName(localStorage.getItem('name'));
-    setEmail(localStorage.getItem('email'));
+    setValues({ name: localStorage.getItem('name'), email: localStorage.getItem('email') });
   }, []);
 
   const editProfileData = (
@@ -34,7 +46,10 @@ function Profile({ handleLogOut }) {
             ref={inputRef}
             className="profile__username input"
             placeholder="Введите имя"
-            onChange={(e) => setName(e.target.value)}
+            name="username"
+            value={values.username || ''}
+            onChange={handleChange}
+            autoComplete="off"
           ></input>
         </div>
         <div className="profile__email-container">
@@ -42,14 +57,17 @@ function Profile({ handleLogOut }) {
           <input
             className="profile__email input"
             placeholder="Введите E-mail"
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={values.email || ''}
+            onChange={handleChange}
+            autoComplete="off"
           ></input>
         </div>
       </div>
-      <span className="profile__error-message profile__error-message_hidden">
-        При обновлении профиля произошла ошибка
+      <span className={`profile__error-message ${isSuccesfullUpdate ? 'profile__success-message' : ''}`}>
+        {isSuccesfullUpdate ? profileNotification : profileError}
       </span>
-      <button className="profile__save-button" type="submit" onClick={handleEditClick}>
+      <button className="profile__save-button" type="submit">
         Сохранить
       </button>
     </>
@@ -60,14 +78,14 @@ function Profile({ handleLogOut }) {
       <div className="profile__data">
         <div className="profile__username-container">
           <div className="profile__username">Имя</div>
-          <div className="profile__username">{name}</div>
+          <div className="profile__username">{values.name}</div>
         </div>
         <div className="profile__email-container">
           <div className="profile__email">E-mail</div>
-          <div className="profile__email">{email}</div>
+          <div className="profile__email">{values.email}</div>
         </div>
       </div>
-      <button className="profile__edit-button" onClick={handleEditClick}>
+      <button className="profile__edit-button" onClick={enableEditing}>
         Редактировать
       </button>
       <button className="profile__logout-button" onClick={handleLogOut}>
@@ -79,10 +97,10 @@ function Profile({ handleLogOut }) {
   return (
     <main>
       <section className="profile">
-        <div className="profile__container">
-          <h2 className="profile__greeting">Привет, {name}!</h2>
+        <form className="profile__container" onSubmit={endEditing}>
+          <h2 className="profile__greeting">Привет, {values.name}!</h2>
           {isEditing ? editProfileData : profileData}
-        </div>
+        </form>
       </section>
     </main>
   );

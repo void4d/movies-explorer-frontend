@@ -1,20 +1,24 @@
 import Logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { useFormWithValidation } from '../../utils/Validation';
 
 function Login({ handleLogin }) {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
+    const { email, password } = values;
 
-    handleLogin(email, password);
+    if (email && password) {
+      handleLogin(email, password);
+      resetForm();
+    }
   }
 
   return (
     <main>
-      <form className="login" onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit} noValidate autoComplete="off">
         <div className="login__top">
           <Link to="/" className="link">
             <img className="login__logo" src={Logo} alt="Логотип"></img>
@@ -29,9 +33,11 @@ function Login({ handleLogin }) {
               type="email"
               minLength="2"
               placeholder="Введите E-mail"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={values.email || ''}
+              onChange={handleChange}
             ></input>
-            <span className="login__error-message"></span>
+            <span className="login__error-message">{errors.email}</span>
           </div>
           <div className="login__input-container">
             <p className="login__input-name">Пароль</p>
@@ -40,13 +46,19 @@ function Login({ handleLogin }) {
               type="password"
               minLength="6"
               placeholder="Введите пароль"
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={values.password || ''}
+              onChange={handleChange}
             ></input>
-            <span className="login__error-message"></span>
+            <span className="login__error-message">{errors.password}</span>
           </div>
         </div>
         <div className="login__bottom">
-          <button className="login__button" type="submit">
+          <button
+            className={`login__button ${isValid ? '' : 'login__button_disabled'}`}
+            disabled={!isValid}
+            type="submit"
+          >
             Войти
           </button>
           <p className="login__not-registered">

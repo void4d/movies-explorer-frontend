@@ -115,11 +115,11 @@
 .profile__error-message {
   font-size: 11px;
   color: #ff004c;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.profile__error-message_hidden {
-  display: none;
+.profile__success-message {
+  color: #2be080;
 }
 
 .input {

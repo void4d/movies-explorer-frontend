@@ -34,6 +34,10 @@ function App() {
   const [moreButton, setMoreButton] = React.useState(false);
   const [shortMovies, setShortMovies] = useState(false);
   const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') ?? '');
+  const [profileNotification, setProfileNotification] = useState('');
+  const [profileError, setProfileError] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+  const [isSuccesfullUpdate, setIsSuccesfullUpdate] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -57,6 +61,26 @@ function App() {
         .catch((err) => console.log(err));
     }
   }, [isLoggedIn]);
+
+  function handleUpdateProfile(name, email) {
+    return mainApi
+      .updateProfile(name, email, jwt)
+      .then((data) => {
+        setCurrentUser(data);
+        localStorage.setItem('name', data.name);
+        localStorage.setItem('email', data.email);
+        setIsSuccesfullUpdate(true);
+        setProfileNotification('Профиль успешно обновлен');
+        setTimeout(() => {
+          setIsEditing(false);
+          setProfileNotification('');
+        }, 2000);
+      })
+      .catch(() => {
+        setIsSuccesfullUpdate(false);
+        setProfileError('При обновлении профиля произошла ошибка');
+      });
+  }
 
   function handleRegister(name, email, password) {
     return auth
@@ -334,7 +358,19 @@ function App() {
           />
           <Route
             path="/profile"
-            element={<ProtectedRoute component={Profile} isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />}
+            element={
+              <ProtectedRoute
+                component={Profile}
+                isLoggedIn={isLoggedIn}
+                handleLogOut={handleLogOut}
+                handleUpdateProfile={handleUpdateProfile}
+                profileNotification={profileNotification}
+                profileError={profileError}
+                isEditing={isEditing}
+                setIsEditing={setIsEditing}
+                isSuccesfullUpdate={isSuccesfullUpdate}
+              />
+            }
           />
           <Route path="/signup" element={<Register handleRegister={handleRegister} />} />
           <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
