@@ -1,7 +1,7 @@
+import { useEffect, React, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 import Preloader from '../Preloader/Preloader.js';
-import { useEffect, React, useState } from 'react';
 
 function MoviesCardList({
   moviesCardList,

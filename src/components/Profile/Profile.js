@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useForm } from '../../utils/Validation';
 
 function Profile({

@@ -1,6 +1,6 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function SavedMovies({
@@ -22,7 +22,6 @@ function SavedMovies({
 }) {
   const location = useLocation();
   const moviesPage = location.pathname === '/movies';
-  const savedMoviesPage = location.pathname === '/saved-movies';
 
   useEffect(() => {
     if (moviesPage && localStorage.getItem('searchedMovies')) {
