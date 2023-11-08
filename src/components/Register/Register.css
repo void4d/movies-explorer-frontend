@@ -72,7 +72,7 @@
   font-weight: 400;
   position: absolute;
   left: 0;
-  top: 51px;
+  top: 45px;
 }
 
 .register__bottom {
@@ -101,6 +101,7 @@
 .register__button_disabled {
   color: #c2c2c2;
   background-color: #f8f8f8;
+  cursor: default;
 }
 
 .register__button:hover {

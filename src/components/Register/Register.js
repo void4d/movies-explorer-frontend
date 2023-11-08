@@ -1,20 +1,24 @@
 import Logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { useFormWithValidation } from '../../utils/Validation';
 
 function Register({ handleRegister }) {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleRegister(name, email, password);
+    const { username, email, password } = values;
+
+    if (username && email && password) {
+      handleRegister(username, email, password);
+      resetForm();
+    }
   }
 
   return (
     <main>
-      <form className="register" onSubmit={handleSubmit}>
+      <form className="register" onSubmit={handleSubmit} autoComplete="off">
         <div className="register__top">
           <Link to="/" className="link">
             <img className="register__logo" src={Logo} alt="Логотип"></img>
@@ -28,9 +32,12 @@ function Register({ handleRegister }) {
               className="register__input"
               minLength="2"
               placeholder="Введите имя"
-              onChange={(e) => setName(e.target.value)}
+              name="username"
+              pattern="^[\p{L}\p{M}\-]+$"
+              value={values.username || ''}
+              onChange={handleChange}
             ></input>
-            <span className="register__error-message"></span>
+            <span className="register__error-message">{errors.username}</span>
           </div>
           <div className="register__input-container">
             <p className="register__input-name">E-mail</p>
@@ -39,9 +46,12 @@ function Register({ handleRegister }) {
               type="email"
               minLength="2"
               placeholder="Введите E-mail"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              pattern="^.+@.+\..+$"
+              value={values.email || ''}
+              onChange={handleChange}
             ></input>
-            <span className="register__error-message"></span>
+            <span className="register__error-message">{errors.email}</span>
           </div>
           <div className="register__input-container">
             <p className="register__input-name">Пароль</p>
@@ -50,13 +60,19 @@ function Register({ handleRegister }) {
               type="password"
               minLength="6"
               placeholder="Введите пароль"
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={values.password || ''}
+              onChange={handleChange}
             ></input>
-            <span className="register__error-message"></span>
+            <span className="register__error-message">{errors.password}</span>
           </div>
         </div>
         <div className="register__bottom">
-          <button className="register__button" type="submit">
+          <button
+            className={`register__button ${isValid ? '' : 'register__button_disabled'}`}
+            type="submit"
+            disabled={!isValid}
+          >
             Зарегистрироваться
           </button>
           <p className="register__already-registered">
