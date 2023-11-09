@@ -31,7 +31,14 @@ function SavedMovies({
 
     setIsFieldEmpty(false);
     setSearchQuery('');
-    setShortMovies(false);
+  }, []);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('shortSavedMovies')) === true) {
+      setShortMovies(true);
+    } else {
+      setShortMovies(false);
+    }
   }, []);
 
   return (

@@ -114,15 +114,21 @@ function App() {
 
   function turnShortMoviesOn() {
     setShortMovies(true);
-    localStorage.setItem('shortMovies', true);
+
+    if (moviesPage) {
+      localStorage.setItem('shortMovies', true);
+    } else {
+      localStorage.setItem('shortSavedMovies', true);
+    }
+
     filterByDuration();
   }
 
   function turnShortMoviesOff() {
     setShortMovies(false);
-    localStorage.setItem('shortMovies', false);
 
     if (moviesPage) {
+      localStorage.setItem('shortMovies', false);
       const localStorageSearchedMovies = JSON.parse(localStorage.getItem('searchedMovies'));
       if (localStorageSearchedMovies && localStorageSearchedMovies.length > 0) {
         setMoviesCardList(localStorageSearchedMovies);
@@ -130,6 +136,7 @@ function App() {
         setMoviesCardList([]);
       }
     } else {
+      localStorage.setItem('shortSavedMovies', false);
       const localStorageSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
       if (localStorageSavedMovies && localStorageSavedMovies.length > 0) {
         setSavedMovies(localStorageSavedMovies);
