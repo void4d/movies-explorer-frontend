@@ -36,7 +36,14 @@ function Movies({
     }
 
     setIsFieldEmpty(false);
-    setShortMovies(false);
+  }, []);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('shortMovies')) === true) {
+      setShortMovies(true);
+    } else {
+      setShortMovies(false);
+    }
   }, []);
 
   return (

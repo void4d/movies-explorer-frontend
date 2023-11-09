@@ -114,11 +114,13 @@ function App() {
 
   function turnShortMoviesOn() {
     setShortMovies(true);
+    localStorage.setItem('shortMovies', true);
     filterByDuration();
   }
 
   function turnShortMoviesOff() {
     setShortMovies(false);
+    localStorage.setItem('shortMovies', false);
 
     if (moviesPage) {
       const localStorageSearchedMovies = JSON.parse(localStorage.getItem('searchedMovies'));
