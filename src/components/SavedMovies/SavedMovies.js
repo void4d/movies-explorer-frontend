@@ -1,7 +1,6 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 function SavedMovies({
   handleUnsave,
@@ -19,17 +18,11 @@ function SavedMovies({
   setShortMovies,
   setSavedMovies,
   setIsFieldEmpty,
+  setNothingFound,
 }) {
-  const location = useLocation();
-  const moviesPage = location.pathname === '/movies';
-
   useEffect(() => {
-    if (moviesPage && localStorage.getItem('searchedMovies')) {
-      setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')));
-      setIsFieldEmpty(false);
-    }
-
     setIsFieldEmpty(false);
+    setNothingFound(false);
     setSearchQuery('');
   }, []);
 

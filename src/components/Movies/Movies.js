@@ -2,6 +2,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { filterByDuration } from '../../utils/Utils.js';
 
 function Movies({
   isSaved,
@@ -33,6 +34,10 @@ function Movies({
     if (moviesPage && localStorage.getItem('searchQuery') && localStorage.getItem('searchedMovies')) {
       setSearchQuery(localStorage.getItem('searchQuery'));
       setMoviesCardList(JSON.parse(localStorage.getItem('searchedMovies')));
+    } else if (moviesPage && !localStorage.getItem('searchQuery') && !localStorage.getItem('searchedMovies')) {
+      setMoviesCardList([]);
+    } else {
+      setMoviesCardList(JSON.parse(localStorage.getItem('moviesList')));
     }
 
     setIsFieldEmpty(false);
@@ -41,6 +46,7 @@ function Movies({
   useEffect(() => {
     if (JSON.parse(localStorage.getItem('shortMovies')) === true) {
       setShortMovies(true);
+      setMoviesCardList(filterByDuration(JSON.parse(localStorage.getItem('searchedMovies'))));
     } else {
       setShortMovies(false);
     }

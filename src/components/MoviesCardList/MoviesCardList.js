@@ -28,18 +28,18 @@ function MoviesCardList({
       {!savedMoviesPage
         ? moviesCardList
             .slice(0, visibleMovies)
-            .map((movie, index) => (
+            .map((movie) => (
               <MoviesCard
                 movie={movie}
-                key={index}
+                key={movie.id}
                 handleSave={handleSave}
                 handleUnsave={handleUnsave}
                 isSaved={isSaved}
                 savedMovies={savedMovies}
               />
             ))
-        : savedMovies.map((movie, index) => (
-            <MoviesCard movie={movie} key={index} handleUnsave={handleUnsave} savedMovies={savedMovies} />
+        : savedMovies.map((movie) => (
+            <MoviesCard movie={movie} key={movie._id} handleUnsave={handleUnsave} savedMovies={savedMovies} />
           ))}
     </ul>
   );
