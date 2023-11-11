@@ -11,8 +11,11 @@ function Login({ handleLogin }) {
     const { email, password } = values;
 
     if (email && password) {
-      handleLogin(email, password);
-      resetForm();
+      handleLogin(email, password).then((res) => {
+        if (res) {
+          resetForm();
+        }
+      });
     }
   }
 

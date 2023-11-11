@@ -11,8 +11,11 @@ function Register({ handleRegister, handleLogin }) {
     const { username, email, password } = values;
 
     if (username && email && password) {
-      handleRegister(username, email, password);
-      resetForm();
+      handleRegister(username, email, password).then((res) => {
+        if (res) {
+          resetForm();
+        }
+      });
     }
   }
 
