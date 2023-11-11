@@ -98,7 +98,7 @@ function App() {
     return auth
       .register(name, email, password)
       .then(() => {
-        navigate('/signin');
+        handleLogin(email, password);
       })
       .catch((err) => console.log(err));
   }
@@ -156,6 +156,7 @@ function App() {
         setMoviesCardList([]);
       }
     } else {
+      setNothingFound(false);
       setSavedMovies(filterByQuery(initialSavedMovies, searchQuery, false));
     }
   }
@@ -334,6 +335,7 @@ function App() {
                 setIsFieldEmpty={setIsFieldEmpty}
                 setNothingFound={setNothingFound}
                 initialSavedMovies={initialSavedMovies}
+                getSavedMovies={getSavedMovies}
               />
             }
           />
@@ -353,7 +355,7 @@ function App() {
               />
             }
           />
-          <Route path="/signup" element={<Register handleRegister={handleRegister} />} />
+          <Route path="/signup" element={<Register handleRegister={handleRegister} handleLogin={handleLogin} />} />
           <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>

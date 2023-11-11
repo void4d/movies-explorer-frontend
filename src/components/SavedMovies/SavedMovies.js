@@ -22,18 +22,17 @@ function SavedMovies({
   setIsFieldEmpty,
   setNothingFound,
   initialSavedMovies,
+  getSavedMovies,
 }) {
   const location = useLocation();
   const isSavedMoviesPage = location.pathname === '/saved-movies';
 
   useEffect(() => {
-    if (isSavedMoviesPage) {
-      setShortMovies(false);
-      setIsFieldEmpty(false);
-      setNothingFound(false);
-      setSearchQuery('');
-      setSavedMovies(initialSavedMovies);
-    }
+    setShortMovies(false);
+    setIsFieldEmpty(false);
+    setNothingFound(false);
+    setSearchQuery('');
+    getSavedMovies();
   }, []);
 
   return (
