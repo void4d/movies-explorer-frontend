@@ -1,6 +1,8 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { filterByDuration } from '../../utils/Utils.js';
 
 function SavedMovies({
   handleUnsave,
@@ -19,18 +21,18 @@ function SavedMovies({
   setSavedMovies,
   setIsFieldEmpty,
   setNothingFound,
+  initialSavedMovies,
 }) {
-  useEffect(() => {
-    setIsFieldEmpty(false);
-    setNothingFound(false);
-    setSearchQuery('');
-  }, []);
+  const location = useLocation();
+  const isSavedMoviesPage = location.pathname === '/saved-movies';
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('shortSavedMovies')) === true) {
-      setShortMovies(true);
-    } else {
+    if (isSavedMoviesPage) {
       setShortMovies(false);
+      setIsFieldEmpty(false);
+      setNothingFound(false);
+      setSearchQuery('');
+      setSavedMovies(initialSavedMovies);
     }
   }, []);
 

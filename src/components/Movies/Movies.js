@@ -33,7 +33,7 @@ function Movies({
   const localStorageSearchQuery = localStorage.getItem('searchQuery');
   const localStorageSearchedMovies = localStorage.getItem('searchedMovies');
   const localStorageMoviesList = localStorage.getItem('moviesList');
-  const localStorageShortState = localStorage.getItem('moviesList');
+  const localStorageShortState = localStorage.getItem('shortMovies');
 
   useEffect(() => {
     if (moviesPage && localStorageSearchQuery && localStorageSearchedMovies) {
@@ -49,6 +49,7 @@ function Movies({
   }, []);
 
   useEffect(() => {
+    setShortMovies(false);
     if (moviesPage && localStorageSearchedMovies) {
       if (JSON.parse(localStorageShortState) === true) {
         setShortMovies(true);

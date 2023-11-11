@@ -120,6 +120,7 @@ function App() {
     setMoviesCardList([]);
     setSavedMovies([]);
     setSearchQuery('');
+    setShortMovies(false);
     localStorage.clear();
     setIsLoggedIn(false);
     navigate('/');
@@ -132,8 +133,11 @@ function App() {
       localStorage.setItem('shortMovies', true);
       setMoviesCardList(filterByDuration(moviesCardList));
     } else {
-      localStorage.setItem('shortSavedMovies', true);
-      setSavedMovies(filterByDuration(savedMovies));
+      if (filterByDuration(savedMovies).length === 0) {
+        setNothingFound(true);
+      } else {
+        setSavedMovies(filterByDuration(savedMovies));
+      }
     }
   }
 
@@ -152,8 +156,7 @@ function App() {
         setMoviesCardList([]);
       }
     } else {
-      localStorage.setItem('shortSavedMovies', false);
-      setSavedMovies(initialSavedMovies);
+      setSavedMovies(filterByQuery(initialSavedMovies, searchQuery, false));
     }
   }
 
@@ -225,18 +228,18 @@ function App() {
       setIsFieldEmpty(true);
     } else {
       setIsFieldEmpty(false);
-      const filteredSavedMovies = searchSavedMoviesInLocalStorage(searchQuery);
+      const filteredSavedMovies = searchInSavedMovies(searchQuery);
       if (filteredSavedMovies.length === 0) {
         setNothingFound(true);
       }
 
-      setSavedMovies(filteredSavedMovies.reverse());
+      setSavedMovies(filteredSavedMovies);
     }
   }
 
-  function searchSavedMoviesInLocalStorage(searchQuery) {
+  function searchInSavedMovies(searchQuery) {
     if (savedMovies) {
-      filterByDuration(savedMovies);
+      return filterByQuery(savedMovies, searchQuery, shortMovies);
     } else {
       setNothingFound(true);
       return [];
@@ -330,6 +333,7 @@ function App() {
                 findInSavedMovies={findInSavedMovies}
                 setIsFieldEmpty={setIsFieldEmpty}
                 setNothingFound={setNothingFound}
+                initialSavedMovies={initialSavedMovies}
               />
             }
           />
