@@ -30,25 +30,34 @@ function Movies({
   const location = useLocation();
   const moviesPage = location.pathname === '/movies';
 
+  const localStorageSearchQuery = localStorage.getItem('searchQuery');
+  const localStorageSearchedMovies = localStorage.getItem('searchedMovies');
+  const localStorageMoviesList = localStorage.getItem('moviesList');
+  const localStorageShortState = localStorage.getItem('moviesList');
+
   useEffect(() => {
-    if (moviesPage && localStorage.getItem('searchQuery') && localStorage.getItem('searchedMovies')) {
-      setSearchQuery(localStorage.getItem('searchQuery'));
-      setMoviesCardList(JSON.parse(localStorage.getItem('searchedMovies')));
-    } else if (moviesPage && !localStorage.getItem('searchQuery') && !localStorage.getItem('searchedMovies')) {
+    if (moviesPage && localStorageSearchQuery && localStorageSearchedMovies) {
+      setSearchQuery(localStorageSearchQuery);
+      setMoviesCardList(JSON.parse(localStorageSearchedMovies));
+    } else if (moviesPage && !localStorageSearchQuery && !localStorageSearchedMovies) {
       setMoviesCardList([]);
     } else {
-      setMoviesCardList(JSON.parse(localStorage.getItem('moviesList')));
+      setMoviesCardList(JSON.parse(localStorageMoviesList));
     }
 
     setIsFieldEmpty(false);
   }, []);
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('shortMovies')) === true) {
-      setShortMovies(true);
-      setMoviesCardList(filterByDuration(JSON.parse(localStorage.getItem('searchedMovies'))));
+    if (moviesPage && localStorageSearchedMovies) {
+      if (JSON.parse(localStorageShortState) === true) {
+        setShortMovies(true);
+        setMoviesCardList(filterByDuration(JSON.parse(localStorageSearchedMovies)));
+      } else {
+        setShortMovies(false);
+      }
     } else {
-      setShortMovies(false);
+      setMoviesCardList([]);
     }
   }, []);
 
