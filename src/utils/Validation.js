@@ -23,13 +23,13 @@ export function useFormWithValidation() {
     const name = target.name;
     const value = target.value;
 
-    const usernamePattern = /^[a-zA-Zа-яА-ЯЁё\s-]+$/;
+    // const usernamePattern = /^[a-zA-Zа-яА-ЯЁё\s-]+$/;
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (name === 'username') {
       if (value === '') {
         target.setCustomValidity('');
-      } else if (!usernamePattern.test(value)) {
+      } else if (target.validity.patternMismatch) {
         target.setCustomValidity('Имя пользователя может содержать только латиницу, кириллицу, дефисы и пробелы');
       } else {
         target.setCustomValidity('');

@@ -1,8 +1,6 @@
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { filterByDuration } from '../../utils/Utils.js';
 
 function SavedMovies({
   handleUnsave,
@@ -18,15 +16,10 @@ function SavedMovies({
   setSearchQuery,
   turnShortMoviesOff,
   setShortMovies,
-  setSavedMovies,
   setIsFieldEmpty,
   setNothingFound,
-  initialSavedMovies,
   getSavedMovies,
 }) {
-  const location = useLocation();
-  const isSavedMoviesPage = location.pathname === '/saved-movies';
-
   useEffect(() => {
     setShortMovies(false);
     setIsFieldEmpty(false);

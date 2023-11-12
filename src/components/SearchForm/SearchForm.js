@@ -10,7 +10,6 @@ function SearchForm({
   findInSavedMovies,
 }) {
   const location = useLocation();
-  const savedMoviesPage = location.pathname === '/saved-movies';
   const moviesPage = location.pathname === '/movies';
 
   return (

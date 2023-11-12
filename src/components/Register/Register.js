@@ -36,7 +36,7 @@ function Register({ handleRegister, handleLogin }) {
               minLength="2"
               placeholder="Введите имя"
               name="username"
-              pattern="^[\p{L}\p{M}\-]+$"
+              pattern="^[\p{L}\p{M}\-]+( ?[\p{L}\p{M}\-]+)*$"
               value={values.username || ''}
               onChange={handleChange}
             ></input>
