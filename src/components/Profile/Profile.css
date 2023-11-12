@@ -88,6 +88,12 @@
   opacity: 0.7;
 }
 
+.profile__save-button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .profile__save-button {
   margin-bottom: 70px;
   border: none;
@@ -106,6 +112,7 @@
 .profile__save-button_disabled {
   color: #c2c2c2;
   background-color: #f8f8f8;
+  cursor: default;
 }
 
 .profile__save-button:hover {
@@ -113,6 +120,10 @@
 }
 
 .profile__error-message {
+  position: absolute;
+  display: block;
+  top: -40px;
+  max-width: 390px;
   font-size: 11px;
   color: #ff004c;
   margin-bottom: 18px;

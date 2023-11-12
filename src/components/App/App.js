@@ -38,6 +38,8 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [isSuccesfullUpdate, setIsSuccesfullUpdate] = useState('');
   const [initialSavedMovies, setInitialSavedMovies] = useState([]);
+  const [registerError, setRegisterError] = useState('');
+  const [loginError, setLoginError] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -88,9 +90,12 @@ function App() {
           setProfileNotification('');
         }, 2000);
       })
-      .catch(() => {
+      .catch((err) => {
         setIsSuccesfullUpdate(false);
         setProfileError('При обновлении профиля произошла ошибка');
+        if (err === 'Ошибка: 409') {
+          setProfileError('Такой email уже существует');
+        }
       });
   }
 
@@ -100,7 +105,13 @@ function App() {
       .then(() => {
         handleLogin(email, password);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err === 'Ошибка: 409') {
+          setRegisterError('Такой email уже существует.');
+        } else {
+          setRegisterError('При регистрации произошла ошибка.');
+        }
+      });
   }
 
   function handleLogin(email, password) {
@@ -113,7 +124,13 @@ function App() {
           setIsLoggedIn(true);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err === 'Ошибка: 401') {
+          setLoginError('При авторизации произошла ошибка. Токен не передан или передан не в том формате.');
+        } else {
+          setLoginError('Неправильный email или пароль.');
+        }
+      });
   }
 
   function handleLogOut() {
@@ -267,7 +284,7 @@ function App() {
     });
   }
 
-  function openSideMenu(e) {
+  function openSideMenu() {
     setIsSideMenuOpen(true);
     document.body.style.overflow = 'hidden';
   }
@@ -352,11 +369,18 @@ function App() {
                 isEditing={isEditing}
                 setIsEditing={setIsEditing}
                 isSuccesfullUpdate={isSuccesfullUpdate}
+                setProfileError={setProfileError}
+                setIsSuccesfullUpdate={setIsSuccesfullUpdate}
               />
             }
           />
-          <Route path="/signup" element={<Register handleRegister={handleRegister} handleLogin={handleLogin} />} />
-          <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
+          <Route
+            path="/signup"
+            element={
+              <Register handleRegister={handleRegister} handleLogin={handleLogin} registerError={registerError} />
+            }
+          />
+          <Route path="/signin" element={<Login handleLogin={handleLogin} loginError={loginError} />} />
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
         <Footer />

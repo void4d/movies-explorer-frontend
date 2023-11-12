@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/Validation';
 
-function Register({ handleRegister, handleLogin }) {
+function Register({ handleRegister, registerError }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
@@ -71,6 +71,7 @@ function Register({ handleRegister, handleLogin }) {
           </div>
         </div>
         <div className="register__bottom">
+          <span className="register__general-error-message">{registerError}</span>
           <button
             className={`register__button ${isValid ? '' : 'register__button_disabled'}`}
             type="submit"

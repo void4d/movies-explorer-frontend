@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/Validation';
 
-function Login({ handleLogin }) {
+function Login({ handleLogin, loginError }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
@@ -57,6 +57,7 @@ function Login({ handleLogin }) {
           </div>
         </div>
         <div className="login__bottom">
+          <span className="login__general-error-message">{loginError}</span>
           <button
             className={`login__button ${isValid ? '' : 'login__button_disabled'}`}
             disabled={!isValid}

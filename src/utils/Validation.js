@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useContext } from 'react';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 export function useForm() {
   const [values, setValues] = useState({});
@@ -14,6 +15,7 @@ export function useForm() {
 }
 
 export function useFormWithValidation() {
+  const currentUser = useContext(CurrentUserContext);
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
@@ -45,10 +47,10 @@ export function useFormWithValidation() {
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage });
 
-    if (value) {
-      setIsValid(target.closest('form').checkValidity());
-    } else {
+    if (!value || currentUser.name === value || currentUser.email === value) {
       setIsValid(false);
+    } else {
+      setIsValid(target.closest('form').checkValidity());
     }
   };
 
@@ -61,5 +63,5 @@ export function useFormWithValidation() {
     [setValues, setErrors, setIsValid]
   );
 
-  return { values, handleChange, errors, isValid, resetForm };
+  return { values, handleChange, errors, isValid, resetForm, setValues, setIsValid, setErrors };
 }

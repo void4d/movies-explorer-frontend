@@ -76,10 +76,22 @@
 }
 
 .register__bottom {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.register__general-error-message {
+  margin: 0;
+  color: #ee3465;
+  font-size: 10px;
+  font-weight: 400;
+  position: absolute;
+  top: 40px;
+  max-width: 390px;
+  text-align: center;
 }
 
 .register__button {
@@ -161,6 +173,11 @@
 
   .register__input {
     padding-bottom: 10px;
+  }
+
+  .register__general-error-message {
+    top: 120px;
+    max-width: 260px;
   }
 
   .register__button {

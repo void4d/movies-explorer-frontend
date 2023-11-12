@@ -1,5 +1,5 @@
 import { useRef, useEffect, useContext } from 'react';
-import { useForm, useFormWithValidation } from '../../utils/Validation';
+import { useFormWithValidation } from '../../utils/Validation';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Profile({
@@ -10,23 +10,26 @@ function Profile({
   setIsEditing,
   profileError,
   isSuccesfullUpdate,
+  setProfileError,
+  setIsSuccesfullUpdate,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const { values, handleChange, setValues } = useForm();
-
+  // const { values, handleChange, setValues } = useForm();
+  const { values, setValues, handleChange, isValid, setIsValid } = useFormWithValidation();
   const inputRef = useRef(null);
 
   function enableEditing() {
     setIsEditing(true);
+    setIsValid(false);
+    setProfileError(false);
+    setIsSuccesfullUpdate(false);
   }
 
   function endEditing(e) {
     e.preventDefault();
     const { name, email } = values;
 
-    console.log(name);
-
-    if (name !== currentUser.name && email !== currentUser.email) {
+    if (name !== currentUser.name || email !== currentUser.email) {
       handleUpdateProfile(name, email);
     }
   }
@@ -70,12 +73,18 @@ function Profile({
           ></input>
         </div>
       </div>
-      <span className={`profile__error-message ${isSuccesfullUpdate ? 'profile__success-message' : ''}`}>
-        {isSuccesfullUpdate ? profileNotification : profileError}
-      </span>
-      <button className="profile__save-button" type="submit">
-        Сохранить
-      </button>
+      <div className="profile__save-button-container">
+        <span className={`profile__error-message ${isSuccesfullUpdate ? 'profile__success-message' : ''}`}>
+          {isSuccesfullUpdate ? profileNotification : profileError}
+        </span>
+        <button
+          className={`profile__save-button ${!isValid && 'profile__save-button_disabled'}`}
+          disabled={!isValid}
+          type="submit"
+        >
+          Сохранить
+        </button>
+      </div>
     </>
   );
 
