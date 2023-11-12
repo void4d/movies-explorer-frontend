@@ -1,5 +1,6 @@
-import { useRef, useEffect } from 'react';
-import { useForm } from '../../utils/Validation';
+import { useRef, useEffect, useContext } from 'react';
+import { useForm, useFormWithValidation } from '../../utils/Validation';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Profile({
   handleLogOut,
@@ -10,6 +11,7 @@ function Profile({
   profileError,
   isSuccesfullUpdate,
 }) {
+  const currentUser = useContext(CurrentUserContext);
   const { values, handleChange, setValues } = useForm();
 
   const inputRef = useRef(null);
@@ -22,7 +24,9 @@ function Profile({
     e.preventDefault();
     const { name, email } = values;
 
-    if (name && email) {
+    console.log(name);
+
+    if (name !== currentUser.name && email !== currentUser.email) {
       handleUpdateProfile(name, email);
     }
   }
@@ -46,10 +50,11 @@ function Profile({
             ref={inputRef}
             className="profile__username input"
             placeholder="Введите имя"
-            name="username"
-            value={values.username || ''}
+            name="name"
+            value={values.name || ''}
             onChange={handleChange}
             autoComplete="off"
+            pattern="^[\p{L}\p{M}\-]+( ?[\p{L}\p{M}\-]+)*$"
           ></input>
         </div>
         <div className="profile__email-container">
@@ -61,6 +66,7 @@ function Profile({
             value={values.email || ''}
             onChange={handleChange}
             autoComplete="off"
+            pattern="^.+@.+\..+$"
           ></input>
         </div>
       </div>
@@ -78,11 +84,11 @@ function Profile({
       <div className="profile__data">
         <div className="profile__username-container">
           <div className="profile__username">Имя</div>
-          <div className="profile__username">{values.name}</div>
+          <div className="profile__username">{currentUser.name}</div>
         </div>
         <div className="profile__email-container">
           <div className="profile__email">E-mail</div>
-          <div className="profile__email">{values.email}</div>
+          <div className="profile__email">{currentUser.email}</div>
         </div>
       </div>
       <button className="profile__edit-button" onClick={enableEditing}>
@@ -97,8 +103,8 @@ function Profile({
   return (
     <main>
       <section className="profile">
-        <form className="profile__container" onSubmit={endEditing}>
-          <h2 className="profile__greeting">Привет, {values.name}!</h2>
+        <form className="profile__container" onSubmit={endEditing} noValidate>
+          <h2 className="profile__greeting">Привет, {currentUser.name}!</h2>
           {isEditing ? editProfileData : profileData}
         </form>
       </section>
