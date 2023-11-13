@@ -1,9 +1,8 @@
 import Logo from '../../images/logo.svg';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/Validation';
 
-function Login({ handleLogin, loginError }) {
+function Login({ handleLogin, loginError, isLoggedIn }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {

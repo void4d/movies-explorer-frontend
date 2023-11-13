@@ -48,9 +48,9 @@ function MoviesCardList({
     let increment = 0;
     if (windowSize > 1279) {
       increment = 3;
-    } else if (windowSize < 1280 && windowSize > 480) {
+    } else if (windowSize < 1280 && windowSize > 767) {
       increment = 2;
-    } else if (windowSize <= 480) {
+    } else if (windowSize <= 768) {
       increment = 2;
     }
 
@@ -61,9 +61,9 @@ function MoviesCardList({
     setTimeout(() => {
       if (windowSize > 1279) {
         setVisibleMovies(12);
-      } else if (windowSize < 1280 && windowSize > 480) {
+      } else if (windowSize < 1280 && windowSize > 767) {
         setVisibleMovies(8);
-      } else if (windowSize <= 480) {
+      } else if (windowSize <= 768) {
         setVisibleMovies(5);
       }
     }, 500);

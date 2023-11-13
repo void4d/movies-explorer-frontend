@@ -8,7 +8,7 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import SideMenu from '../SideMenu/SideMenu';
 import { useState, useEffect } from 'react';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -46,11 +46,19 @@ function App() {
   const moviesPage = location.pathname === '/movies';
   const jwt = localStorage.getItem('jwt');
 
+  function logoutIfNoToken() {
+    handleLogOut();
+    navigate('/');
+  }
+
   useEffect(() => {
     localStorage.setItem('isLoggedIn', isLoggedIn);
   }, [isLoggedIn]);
 
   useEffect(() => {
+    if (!jwt) {
+      logoutIfNoToken();
+    }
     if (isLoggedIn) {
       mainApi
         .getProfile(jwt)
@@ -62,11 +70,15 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, jwt]);
 
   function getSavedMovies() {
+    if (!jwt) {
+      logoutIfNoToken();
+      return;
+    }
     setIsLoading(true);
-    mainApi
+    return mainApi
       .getSavedMovies(jwt)
       .then((movies) => {
         setIsLoading(false);
@@ -77,6 +89,11 @@ function App() {
   }
 
   function handleUpdateProfile(name, email) {
+    if (!jwt) {
+      logoutIfNoToken();
+      return;
+    }
+
     return mainApi
       .updateProfile(name, email, jwt)
       .then((data) => {
@@ -263,7 +280,10 @@ function App() {
   }
 
   function handleSave(movie) {
-    mainApi.createMovie(movie, jwt).then((m) => {
+    if (!jwt) {
+      logoutIfNoToken();
+    }
+    return mainApi.createMovie(movie, jwt).then((m) => {
       setSavedMovies((prevSavedMovies) => {
         const updatedSavedMovies = [...prevSavedMovies, m];
         return updatedSavedMovies;
@@ -272,7 +292,10 @@ function App() {
   }
 
   function handleUnsave(movie) {
-    mainApi.deleteMovie(movie._id, jwt).then((m) => {
+    if (!jwt) {
+      logoutIfNoToken();
+    }
+    return mainApi.deleteMovie(movie._id, jwt).then((m) => {
       setSavedMovies((prevSavedMovies) => {
         const updatedSavedMovies = prevSavedMovies.filter((m) => {
           return m._id !== movie._id;
@@ -375,10 +398,17 @@ function App() {
           <Route
             path="/signup"
             element={
-              <Register handleRegister={handleRegister} handleLogin={handleLogin} registerError={registerError} />
+              isLoggedIn ? (
+                <Navigate to="/" />
+              ) : (
+                <Register handleRegister={handleRegister} handleLogin={handleLogin} registerError={registerError} />
+              )
             }
           />
-          <Route path="/signin" element={<Login handleLogin={handleLogin} loginError={loginError} />} />
+          <Route
+            path="/signin"
+            element={isLoggedIn ? <Navigate to="/" /> : <Login handleLogin={handleLogin} loginError={loginError} />}
+          />
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
         <Footer />
