@@ -2,6 +2,16 @@ import { useEffect, React, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard.js';
 import Preloader from '../Preloader/Preloader.js';
+import {
+  DESKTOP_SCREEN_WIDTH,
+  TABLET_SCREEN_WIDTH,
+  DESKTOP_TOTAL_MOVIES,
+  TABLET_TOTAL_MOVIES,
+  MOBILE_TOTAL_MOVIES,
+  DESKTOP_ADDITIONAL_MOVIES,
+  TABLET_ADDITIONAL_MOVIES,
+  MOBILE_ADDITIONAL_MOVIES,
+} from '../../utils/Constants.js';
 
 function MoviesCardList({
   moviesCardList,
@@ -45,29 +55,26 @@ function MoviesCardList({
   );
 
   function showMoreMovies() {
-    let increment = 0;
-    if (windowSize > 1279) {
-      increment = 3;
-    } else if (windowSize < 1280 && windowSize > 767) {
-      increment = 2;
-    } else if (windowSize <= 768) {
-      increment = 2;
+    if (windowSize >= DESKTOP_SCREEN_WIDTH) {
+      setVisibleMovies(visibleMovies + DESKTOP_ADDITIONAL_MOVIES);
+    } else if (windowSize <= DESKTOP_SCREEN_WIDTH && windowSize >= TABLET_SCREEN_WIDTH) {
+      setVisibleMovies(visibleMovies + TABLET_ADDITIONAL_MOVIES);
+    } else if (windowSize <= TABLET_SCREEN_WIDTH) {
+      setVisibleMovies(visibleMovies + MOBILE_ADDITIONAL_MOVIES);
     }
-
-    setVisibleMovies(visibleMovies + increment);
   }
 
   useEffect(() => {
     setTimeout(() => {
-      if (windowSize > 1279) {
-        setVisibleMovies(12);
-      } else if (windowSize < 1280 && windowSize > 767) {
-        setVisibleMovies(8);
-      } else if (windowSize <= 768) {
-        setVisibleMovies(5);
+      if (windowSize >= DESKTOP_SCREEN_WIDTH) {
+        setVisibleMovies(DESKTOP_TOTAL_MOVIES);
+      } else if (windowSize <= DESKTOP_SCREEN_WIDTH && windowSize >= TABLET_SCREEN_WIDTH) {
+        setVisibleMovies(TABLET_TOTAL_MOVIES);
+      } else if (windowSize <= TABLET_SCREEN_WIDTH) {
+        setVisibleMovies(MOBILE_TOTAL_MOVIES);
       }
     }, 500);
-  }, [windowSize]);
+  }, [windowSize, moreButton]);
 
   useEffect(() => {
     function handleWindowSizeChange() {

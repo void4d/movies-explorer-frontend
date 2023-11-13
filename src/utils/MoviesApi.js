@@ -1,4 +1,4 @@
-import { moviesApiUrl } from './Constants';
+import { MOVIES_API_URL } from './Constants';
 
 export default class MoviesApi {
   constructor(config) {
@@ -24,5 +24,5 @@ export default class MoviesApi {
 }
 
 export const moviesApi = new MoviesApi({
-  url: moviesApiUrl,
+  url: MOVIES_API_URL,
 });

@@ -1,5 +1,7 @@
+import { SHORT_MOVIES_DURATION } from './Constants';
+
 function filterByDuration(movies) {
-  return movies.filter((m) => m.duration < 40);
+  return movies.filter((m) => m.duration < SHORT_MOVIES_DURATION);
 }
 
 function filterByQuery(movies, query, shortMovies) {

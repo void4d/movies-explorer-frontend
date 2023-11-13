@@ -1,4 +1,4 @@
-import { mainApiUrl } from './Constants';
+import { MAIN_API_URL } from './Constants';
 
 export default class Auth {
   constructor(config) {
@@ -42,5 +42,5 @@ export default class Auth {
 }
 
 export const auth = new Auth({
-  url: mainApiUrl,
+  url: MAIN_API_URL,
 });
