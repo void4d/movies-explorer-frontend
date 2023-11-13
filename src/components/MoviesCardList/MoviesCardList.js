@@ -51,7 +51,7 @@ function MoviesCardList({
     } else if (windowSize < 1280 && windowSize > 480) {
       increment = 2;
     } else if (windowSize <= 480) {
-      increment = 1;
+      increment = 2;
     }
 
     setVisibleMovies(visibleMovies + increment);
