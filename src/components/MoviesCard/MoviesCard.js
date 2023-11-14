@@ -1,26 +1,70 @@
-import Thumbnail from '../../images/thumbnail.jpg';
 import { useLocation } from 'react-router-dom';
+import React from 'react';
 
-function MoviesCard() {
+function MoviesCard({ movie, handleSave, handleUnsave, savedMovies }) {
   const location = useLocation();
-
-  const isSaved = false;
   const savedMoviesPage = location.pathname === '/saved-movies';
+  const initialSavedMovies = localStorage.getItem('savedMovies')
+    ? JSON.parse(localStorage.getItem('savedMovies')).some((m) => movie.id === m.movieId)
+    : false;
+
+  const [isSaved, setIsSaved] = React.useState(initialSavedMovies);
+
+  function formatDuration(duration) {
+    const hours = Math.floor(duration / 60);
+    const minutes = duration % 60;
+
+    return `${hours}ч ${minutes}мин`;
+  }
+
+  const movieDuration = formatDuration(movie.duration);
+
+  const isSavedMovie = savedMovies.some((m) => movie.id === m.movieId);
+
+  let isSavedInStorage = false;
+  const savedMoviesInStorage = JSON.parse(localStorage.getItem('savedMovies'));
+
+  if (savedMoviesInStorage && savedMoviesInStorage > 0) {
+    isSavedInStorage = savedMoviesInStorage.some((m) => movie.id === m.movieId);
+  } else {
+    isSavedInStorage = false;
+  }
+
+  function handleSaveButtonClick() {
+    if (!isSaved) {
+      handleSave(movie);
+      setIsSaved(true);
+    } else {
+      setIsSaved(false);
+      handleUnsave(savedMovies.find((m) => m.movieId === movie.id));
+    }
+  }
+
+  function onDelete() {
+    handleUnsave(movie);
+    setIsSaved(false);
+  }
+
+  React.useEffect(() => {
+    if (isSavedMovie || isSavedInStorage) {
+      setIsSaved(true);
+    }
+  }, []);
 
   const saveButton = (
-    <button className="movies-card__save-button">
+    <button className="movies-card__save-button" onClick={handleSaveButtonClick}>
       <div className="movies-card__save-button-text">Сохранить</div>
     </button>
   );
 
   const savedButton = (
-    <button className="movies-card__saved-button">
+    <button className="movies-card__saved-button" onClick={handleSaveButtonClick}>
       <div className="movies-card__check-mark-icon"></div>
     </button>
   );
 
   const deleteButton = (
-    <button className="movies-card__delete-button">
+    <button className="movies-card__delete-button" onClick={onDelete}>
       <div className="movies-card__cross-icon"></div>
     </button>
   );
@@ -28,10 +72,17 @@ function MoviesCard() {
   return (
     <li className="movies-card">
       <div className="movies-card__details">
-        <p className="movies-card__details-name">В погоне за Бенкси</p>
-        <p className="movies-card__details-duration">0ч 42м</p>
+        <p className="movies-card__details-name">{movie.nameRU}</p>
+        <p className="movies-card__details-duration">{movieDuration}</p>
       </div>
-      <img className="movies-card__thumbnail" src={Thumbnail} alt=""></img>
+
+      <a href={movie.trailerLink}>
+        <img
+          className="movies-card__thumbnail"
+          src={savedMoviesPage ? movie.image : `https://api.nomoreparties.co/${movie.image.url}`}
+          alt={movie.nameRU}
+        ></img>
+      </a>
       {savedMoviesPage ? deleteButton : isSaved ? savedButton : saveButton}
     </li>
   );

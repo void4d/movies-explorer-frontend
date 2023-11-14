@@ -43,10 +43,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: 10;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .preloader__container {
@@ -85,4 +86,33 @@
   z-index: 10;
   background: #3ddc84;
   animation: preloader-inside-green 1s ease-in-out infinite;
+}
+
+@media screen and (max-width: 767px) {
+  .preloader__container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+
+  .preloader__round {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3ddc84;
+    border-radius: 50px;
+  }
+
+  .preloader__round::after,
+  .preloader__round::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+  }
 }

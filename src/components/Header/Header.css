@@ -138,6 +138,7 @@
 }
 
 .header__login-button {
+  border: none;
   margin-right: 70px;
   background-color: #3ddc84;
   width: 76px;
